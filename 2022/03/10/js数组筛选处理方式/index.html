@@ -22,7 +22,7 @@
 
   
 
-  <title>vue-cli3项目vue.config文件配置 | 霖霏晗的blog</title>
+  <title>js数组中数据筛选处理方式 | 霖霏晗的blog</title>
 
   
 
@@ -45,7 +45,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://linmuhan.gitee.io/links/Asset/menu04.jpg)"></div>
+    <div class="post-image" style="background-image: url(https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg)"></div>
   
 
   <!-- navbar -->
@@ -98,20 +98,18 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">vue-cli3项目vue.config文件配置</h1>
+          <h1 class="title-wrap">js数组中数据筛选处理方式</h1>
           <h2 class="title-sub-wrap">
             <strong>霖霏晗</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2021-11-24T07:02:42.473Z" itemprop="datePublished">2021-11-24</time>
+            <time  class="article-date" datetime="2022-03-09T16:00:00.000Z" itemprop="datePublished">2022-03-10</time>
           </h2>
           <ul class="wrap-list dark">
-  
-    <li><a href="/categories/VUE/">📒 VUE</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/vue/">🏷️ vue</a></li>
+    <li><a href="/tags/js/">🏷️ js</a></li>
   
 </ul>
         </div>
@@ -135,29 +133,7 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <pre><code>module.exports = &#123;
-    productionSourceMap: false,//生产环境是否要生成 sourceMap
-    publicPath: &#39;./&#39;,//部署应用包时的基本 URL 可以通过三元运算去配置dev和prod环境, publicPath: process.env.NODE_ENV === &#39;production&#39; ? &#39;/prod/&#39; : &#39;./&#39;
-    outputDir: &#39;dist&#39;,//build 时输出的文件目录
-    assetsDir: &#39;assets&#39;,//放置静态文件夹目录
-    devServer: &#123;
-        port: 8090,//开发运行时的端口
-        host: &#39;0.0.0.0&#39;, //开发运行时域名
-        https: false,//是否启用 https
-        open: true //npm run serve 时是否直接打开浏览器
-        proxy:&#123;
-      &#39;/server&#39;: &#123;
-        target: &#39;https://www.baidu.com&#39;, //如果请求的接口中有server 地址改为https://www.baidu.com
-      &#125;,
-      &#39;/google&#39;: &#123;
-        target: &#39;https://www.google.com/&#39;如果请求的接口中有google 地址改为https://www.baidu.com
-      &#125;,
-    &#125;,
-    &#125;,
-&#125;
-
-
-</code></pre>
+        <h3 id="数据筛选：根据某个值查询是否存在当前数组并返回值"><a href="#数据筛选：根据某个值查询是否存在当前数组并返回值" class="headerlink" title="数据筛选：根据某个值查询是否存在当前数组并返回值"></a>数据筛选：根据某个值查询是否存在当前数组并返回值</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;script&gt;<br>    <span class="hljs-keyword">var</span>  practiceCategoryList= [<br>    &#123;<br>        <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;全部&#x27;</span>,<br>        <span class="hljs-attr">value</span>: <span class="hljs-string">&#x27;&#x27;</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;鞠婧祎&#x27;</span>,<br>        <span class="hljs-attr">value</span>: <span class="hljs-number">1</span><br>    &#125;, &#123;<br>        <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;林思意&#x27;</span>,<br>        <span class="hljs-attr">value</span>: <span class="hljs-number">2</span><br>    &#125;]<br><br>    <span class="hljs-keyword">var</span>  a =<span class="hljs-string">&#x27;1&#x27;</span><br>    <span class="hljs-keyword">var</span>  b =<span class="hljs-string">&#x27;1,2&#x27;</span><br>    <span class="hljs-function"><span class="hljs-keyword">function</span>  <span class="hljs-title">getdata</span> (<span class="hljs-params">data</span>) </span>&#123;<br>        <span class="hljs-keyword">if</span>(data.length &gt;<span class="hljs-number">1</span>)&#123;<br>            <span class="hljs-keyword">const</span> str = data.split(<span class="hljs-string">&#x27;,&#x27;</span>)<br>            <span class="hljs-keyword">const</span> arr = []<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i <span class="hljs-keyword">of</span> str) &#123;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> practiceCategoryList) &#123;<br>                    <span class="hljs-keyword">if</span>(i == item.value)&#123;<br>                        arr.push(item.label)<br>                    &#125;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">return</span> arr.join()<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-comment">// return  practiceCategoryList[data].label//当枚举值和需要的值一样是处理方式</span><br>            <span class="hljs-keyword">var</span> getvalue = <span class="hljs-string">&#x27;&#x27;</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> practiceCategoryList) &#123;<br>                    <span class="hljs-keyword">if</span>(data == item.value)&#123;<br>                        getvalue = item.label<br>                    &#125;<br>                &#125;<br>            <span class="hljs-keyword">return</span>  getvalue <span class="hljs-comment">//当枚举值和需要的值不一样是处理方式</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-built_in">console</span>.log(getdata(a),<span class="hljs-string">&#x27;getdata-a&#x27;</span>)<span class="hljs-comment">//返回值：鞠婧祎/</span><br>    <span class="hljs-built_in">console</span>.log(getdata(b),<span class="hljs-string">&#x27;getdata-b&#x27;</span>)<span class="hljs-comment">//返回值:鞠婧祎,林思意</span><br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 
       </section>
 
@@ -165,32 +141,16 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://linmuhan.gitee.io/links/Asset/menu02.jpg"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2021/11/24/js%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8B%BC%E6%8E%A5/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">js模板字符串的拼接</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://linmuhan.gitee.io/links/Asset/home.jpg"></div>
+      <div class="card-cover" background-image-lazy data-img="https://linmuhan.gitee.io/links/Asset/menu06.jpg"></div>
     
     <div class="card-text">
       
-        <a href="/2021/10/28/git%E5%91%BD%E4%BB%A4/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">git常用命令(持续更新。。。)</h2>
+        <a href="/2022/03/08/mac%E7%99%BB%E9%99%86%E4%B8%A4%E4%B8%AA%E5%BE%AE%E4%BF%A1%E6%96%B9%E5%BC%8F/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">mac登陆两个微信方式</h2>
         </a>
       
       <div class="card-text--row">Older</div>
