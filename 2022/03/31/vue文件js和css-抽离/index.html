@@ -22,7 +22,7 @@
 
   
 
-  <title>links | 霖霏晗的blog</title>
+  <title>vue文件js和css 抽离 | 霖霏晗的blog</title>
 
   
 
@@ -43,9 +43,9 @@
   <div class="root-container">
     
 <!-- header container -->
-<header class="header-container">
+<header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg)"></div>
+    <div class="post-image" style="background-image: url(https://linmuhan.gitee.io/links/Asset/menu06.jpg)"></div>
   
 
   <!-- navbar -->
@@ -95,64 +95,95 @@
 
   
   
-
-  
-  
     <div class="header-content">
-      <div class="post-text layout-block layout-padding">
-        <h1 class="title-wrap">links</h1>
-        
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">vue文件js和css 抽离</h1>
+          <h2 class="title-sub-wrap">
+            <strong>霖霏晗</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2022-03-31T02:25:17.769Z" itemprop="datePublished">2022-03-31</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/VUE/">📒 VUE</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/vue/">🏷️ vue</a></li>
+  
+</ul>
+        </div>
       </div>
     </div>
+  
+
+  
   
   
 </header>
 
-    <!-- 分页(其他自定义页面) -->
+    <!-- 文章 -->
 
-<!-- 自定义页面 -->
-
+<!-- 文章内容 -->
 <div class="body-container">
   <article class="content-container layout-block post-container">
     <div class="article-info">
       
+      
+      
+      
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="ALL链接"><a href="#ALL链接" class="headerlink" title="ALL链接"></a><center>ALL链接</center></h1>
+        <h2 id="将vue文件script代码抽取到单独的js文件"><a href="#将vue文件script代码抽取到单独的js文件" class="headerlink" title="将vue文件script代码抽取到单独的js文件"></a>将vue文件script代码抽取到单独的js文件</h2><blockquote>
+<p>vue文件</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;script&gt;<br>    <span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./test.js&#x27;</span><br>    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> test<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>test.js</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;test&quot;</span>,<br>    <span class="hljs-function"><span class="hljs-title">data</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <span class="hljs-keyword">return</span> &#123;<br>            <br>        &#125;<br>    &#125;,<br>    <span class="hljs-function"><span class="hljs-title">created</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <br>    &#125;,<br>    <span class="hljs-attr">methods</span>: &#123;<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="将vue文件css代码抽取到单独的css文件"><a href="#将vue文件css代码抽取到单独的css文件" class="headerlink" title="将vue文件css代码抽取到单独的css文件"></a>将vue文件css代码抽取到单独的css文件</h2><blockquote>
+<p>vue文件</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;style lang=&quot;scss&quot; scoped&gt;<br>    @import &quot;/src/Admin.scss&quot;;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
       </section>
 
       
       
-        <section class="page-link-container">
+        <nav class="article-nav">
           
-            <div class="link-item layout-padding">
-              <a href="https://dreamitgirl.github.io" title="阿茹的博客" class="content-padding--primary soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
-                
-                <img src="https://linmuhan.gitee.io/links/Asset/home.jpg" alt="阿茹的博客" class="soft-size--round soft-style--box">
-                
-                <div>
-                  <h4 class="text-ellipsis">阿茹的博客</h4>
-                  
-                </div>
-              </a>
-            </div>
           
-            <div class="link-item layout-padding">
-              <a href="https://lh7zr.github.io/" title="霖霏晗的博客" class="content-padding--primary soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
-                
-                <img src="https://linmuhan.gitee.io/links/Asset/linfeihan.jpg" alt="霖霏晗的博客" class="soft-size--round soft-style--box">
-                
-                <div>
-                  <h4 class="text-ellipsis">霖霏晗的博客</h4>
-                  
-                </div>
-              </a>
-            </div>
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2022/03/10/js%E6%95%B0%E7%BB%84%E7%AD%9B%E9%80%89%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">js数组中数据筛选处理方式</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
           
-        </section>
+        </nav>
       
 
-      
-      
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
     </div>
     <div class="widget-info">
       <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -189,6 +220,8 @@
     </div>
   </div>
 </section>
+
+      
 
       
 
@@ -270,7 +303,6 @@
     </div>
   </article>
 </div>
-
 
     <!-- footer container -->
 <footer id="footer" class="footer">
