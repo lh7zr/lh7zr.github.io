@@ -134,6 +134,7 @@
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
         <h3 id="数据筛选：根据某个值查询是否存在当前数组并返回值"><a href="#数据筛选：根据某个值查询是否存在当前数组并返回值" class="headerlink" title="数据筛选：根据某个值查询是否存在当前数组并返回值"></a>数据筛选：根据某个值查询是否存在当前数组并返回值</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;script&gt;<br>    <span class="hljs-keyword">var</span>  practiceCategoryList= [<br>    &#123;<br>        <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;全部&#x27;</span>,<br>        <span class="hljs-attr">value</span>: <span class="hljs-string">&#x27;&#x27;</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;鞠婧祎&#x27;</span>,<br>        <span class="hljs-attr">value</span>: <span class="hljs-number">1</span><br>    &#125;, &#123;<br>        <span class="hljs-attr">label</span>: <span class="hljs-string">&#x27;林思意&#x27;</span>,<br>        <span class="hljs-attr">value</span>: <span class="hljs-number">2</span><br>    &#125;]<br><br>    <span class="hljs-keyword">var</span>  a =<span class="hljs-string">&#x27;1&#x27;</span><br>    <span class="hljs-keyword">var</span>  b =<span class="hljs-string">&#x27;1,2&#x27;</span><br>    <span class="hljs-function"><span class="hljs-keyword">function</span>  <span class="hljs-title">getdata</span> (<span class="hljs-params">data</span>) </span>&#123;<br>        <span class="hljs-keyword">if</span>(data.length &gt;<span class="hljs-number">1</span>)&#123;<br>            <span class="hljs-keyword">const</span> str = data.split(<span class="hljs-string">&#x27;,&#x27;</span>)<br>            <span class="hljs-keyword">const</span> arr = []<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i <span class="hljs-keyword">of</span> str) &#123;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> practiceCategoryList) &#123;<br>                    <span class="hljs-keyword">if</span>(i == item.value)&#123;<br>                        arr.push(item.label)<br>                    &#125;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">return</span> arr.join()<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-comment">// return  practiceCategoryList[data].label//当枚举值和需要的值一样是处理方式</span><br>            <span class="hljs-keyword">var</span> getvalue = <span class="hljs-string">&#x27;&#x27;</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> practiceCategoryList) &#123;<br>                    <span class="hljs-keyword">if</span>(data == item.value)&#123;<br>                        getvalue = item.label<br>                    &#125;<br>                &#125;<br>            <span class="hljs-keyword">return</span>  getvalue <span class="hljs-comment">//当枚举值和需要的值不一样是处理方式</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-built_in">console</span>.log(getdata(a),<span class="hljs-string">&#x27;getdata-a&#x27;</span>)<span class="hljs-comment">//返回值：鞠婧祎/</span><br>    <span class="hljs-built_in">console</span>.log(getdata(b),<span class="hljs-string">&#x27;getdata-b&#x27;</span>)<span class="hljs-comment">//返回值:鞠婧祎,林思意</span><br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h3 id="判断字符串中首个字符串是否为0，如果是去除0"><a href="#判断字符串中首个字符串是否为0，如果是去除0" class="headerlink" title="判断字符串中首个字符串是否为0，如果是去除0"></a>判断字符串中首个字符串是否为0，如果是去除0</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript">   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeZero</span>(<span class="hljs-params">data</span>) </span>&#123;<br>       <span class="hljs-keyword">if</span> (data.charAt(<span class="hljs-number">0</span>) == <span class="hljs-string">&#x27;0&#x27;</span>) &#123;<br>           data = data.substring(<span class="hljs-number">1</span>, data.length)<br>       &#125;<br>       <span class="hljs-keyword">return</span> data<br>&#125;<br>   <span class="hljs-built_in">console</span>.log(changeZero(<span class="hljs-string">&#x27;01&#x27;</span>), <span class="hljs-string">&#x27;1&#x27;</span>) <span class="hljs-comment">//1,1</span><br><br></code></pre></td></tr></table></figure>
 
       </section>
 
@@ -271,14 +272,14 @@
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/VUE/">
-            VUE (4)
+          <a href="/categories/CSS/H5/">
+            H5 (1)
           </a>
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/CSS/H5/">
-            H5 (1)
+          <a href="/categories/VUE/">
+            VUE (4)
           </a>
         </li>
       
@@ -317,6 +318,12 @@
       
         
       
+        
+          <a href="https://www.zhihu.com/people/ai-yi-han-25" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg t="1587373160860" class="icon icon-zhihu" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M544.949 561.422s0-71.387-34.779-75.050c-34.779-3.663-142.775 0-142.775 0v-219.654h161.078s-1.83-73.219-32.949-73.219h-261.755l43.93-117.148s-65.897 3.663-89.692 45.761-98.844 252.604-98.844 252.604 25.627 10.983 67.726-20.134c42.101-31.116 56.743-86.033 56.743-86.033l76.879-3.663 1.83 223.316s-133.621-1.83-161.078 0c-27.457 1.83-42.101 75.050-42.101 75.050h203.182s-18.307 124.47-69.557 214.164c-53.085 89.692-151.929 161.078-151.929 161.078s71.387 29.287 140.947-10.983c69.557-42.101 120.811-223.316 120.811-223.316l162.912 203.182s14.643-97.013-1.83-124.47c-18.307-27.457-113.49-137.283-113.49-137.283l-42.101 36.607 29.287-120.811h177.552zM587.050 188.010l-1.83 660.793h65.897l23.795 82.37 115.321-82.37h162.912v-660.793h-366.091zM879.92 775.584h-76.879l-97.013 75.050-21.965-75.050h-20.134v-512.527h215.991v512.527z"></path>
+</svg>
+          </a>
         
       
         
