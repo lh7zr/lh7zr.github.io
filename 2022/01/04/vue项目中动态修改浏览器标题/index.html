@@ -22,7 +22,7 @@
 
   
 
-  <title>vue 项目中动态修改浏览器标题 | 霖霏晗的blog</title>
+  <title>vue 项目中动态修改浏览器标题(四步) | 霖霏晗的blog</title>
 
   
 
@@ -98,7 +98,7 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">vue 项目中动态修改浏览器标题</h1>
+          <h1 class="title-wrap">vue 项目中动态修改浏览器标题(四步)</h1>
           <h2 class="title-sub-wrap">
             <strong>霖霏晗</strong>
             <span>发布于</span>
@@ -135,10 +135,10 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h3 id="1-安装插件"><a href="#1-安装插件" class="headerlink" title="1.安装插件"></a>1.安装插件</h3><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss">npm vue-wechat-<span class="hljs-built_in">title</span> --<span class="hljs-keyword">save</span><br></code></pre></td></tr></table></figure>
-<h3 id="2-在main-js里面引入插件"><a href="#2-在main-js里面引入插件" class="headerlink" title="2.在main.js里面引入插件"></a>2.在main.js里面引入插件</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs clean"><span class="hljs-keyword">import</span> VueWechatTitle <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-wechat-title&#x27;</span><span class="hljs-comment">//动态修改title</span><br>Vue.use(VueWechatTitle)<br></code></pre></td></tr></table></figure>
-<h3 id="3-在路由里面-添加title"><a href="#3-在路由里面-添加title" class="headerlink" title="3.在路由里面 添加title"></a>3.在路由里面 添加title</h3><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript">routes: [&#123;<br>    path: <span class="hljs-string">&#x27;&#x27;</span>,<br>    name: <span class="hljs-string">&#x27;&#x27;</span>,<br>    component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;&#x27;</span>),<br>    meta: &#123; title: <span class="hljs-string">&#x27;标题&#x27;</span> &#125;<br>  &#125;]<br></code></pre></td></tr></table></figure>
-<h3 id="4-在app-vue-中添加-指令-v-wechat-title"><a href="#4-在app-vue-中添加-指令-v-wechat-title" class="headerlink" title="4.在app.vue 中添加 指令 v-wechat-title"></a>4.在app.vue 中添加 指令 v-wechat-title</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">&lt;router-<span class="hljs-built_in">view</span> v-wechat-<span class="hljs-built_in">title</span>=&#x27;$route.meta.<span class="hljs-built_in">title</span>&#x27; /&gt;<br></code></pre></td></tr></table></figure>
+        <h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss">npm vue-wechat-<span class="hljs-built_in">title</span> --<span class="hljs-keyword">save</span><br></code></pre></td></tr></table></figure>
+<h3 id="在main-js里面引入插件"><a href="#在main-js里面引入插件" class="headerlink" title="在main.js里面引入插件"></a>在main.js里面引入插件</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs clean"><span class="hljs-keyword">import</span> VueWechatTitle <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-wechat-title&#x27;</span><span class="hljs-comment">//动态修改title</span><br>Vue.use(VueWechatTitle)<br></code></pre></td></tr></table></figure>
+<h3 id="在路由里面-添加title"><a href="#在路由里面-添加title" class="headerlink" title="在路由里面 添加title"></a>在路由里面 添加title</h3><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript">routes: [&#123;<br>    path: <span class="hljs-string">&#x27;&#x27;</span>,<br>    name: <span class="hljs-string">&#x27;&#x27;</span>,<br>    component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;&#x27;</span>),<br>    meta: &#123; title: <span class="hljs-string">&#x27;标题&#x27;</span> &#125;<br>  &#125;]<br></code></pre></td></tr></table></figure>
+<h3 id="在app-vue-中添加-指令-v-wechat-title"><a href="#在app-vue-中添加-指令-v-wechat-title" class="headerlink" title="在app.vue 中添加 指令 v-wechat-title"></a>在app.vue 中添加 指令 v-wechat-title</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">&lt;router-<span class="hljs-built_in">view</span> v-wechat-<span class="hljs-built_in">title</span>=&#x27;$route.meta.<span class="hljs-built_in">title</span>&#x27; /&gt;<br></code></pre></td></tr></table></figure>
 
       </section>
 
@@ -250,6 +250,18 @@
 </section>
 
       
+<section class="widget-toc widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-toc" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M134.50666666 767.46666668H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.23999999v50.13333333c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H134.50666666c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.13333333c0.10666668-27.73333333 22.50666668-50.24000001 50.24000001-50.24000001zM84.37333332 541.65333333h326.18666669c27.73333333 0 50.24000001 22.39999999 50.23999999 50.13333334v50.24000001c0 27.73333333-22.50666668 50.24000001-50.24000002 50.23999999H84.37333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.23999999v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333334zM134.50666666 315.83999999H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.24000001v50.24000001c0 27.73333333-22.50666668 50.13333334-50.24000001 50.13333333H134.50666666c-27.73333333 0-50.24000001-22.39999999-50.23999999-50.13333333v-50.24000001c0.10666668-27.84000001 22.50666668-50.24000001 50.24000001-50.23999999zM209.81333332 89.91999999h326.18666671c27.73333333 0 50.24000001 22.39999999 50.23999997 50.13333335v50.23999999c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H209.81333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333333zM692.05333333 623.36l274.66666669 176.00000002c23.36000001 14.93333333 30.08 45.97333334 15.14666666 69.33333332L954.77333334 910.93333333c-14.93333333 23.25333334-45.97333334 30.08-69.33333335 15.14666667l-274.66666666-176c-23.36000001-14.93333333-30.08-45.97333334-15.14666667-69.33333333l27.09333334-42.24000001c14.93333333-23.36000001 46.08000001-30.08 69.33333333-15.14666666z" fill="currentColor"></path>
+</svg>
+    <span>TOC</span>
+  </div>
+  <div class="widget-body">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">安装插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8main-js%E9%87%8C%E9%9D%A2%E5%BC%95%E5%85%A5%E6%8F%92%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">在main.js里面引入插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E8%B7%AF%E7%94%B1%E9%87%8C%E9%9D%A2-%E6%B7%BB%E5%8A%A0title"><span class="toc-number">3.</span> <span class="toc-text">在路由里面 添加title</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8app-vue-%E4%B8%AD%E6%B7%BB%E5%8A%A0-%E6%8C%87%E4%BB%A4-v-wechat-title"><span class="toc-number">4.</span> <span class="toc-text">在app.vue 中添加 指令 v-wechat-title</span></a></li></ol>
+  </div>
+</section>
+
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -276,26 +288,8 @@
     <ul class="categorys-list">
       
         <li class="categorys-list-item">
-          <a href="/categories/PS/">
-            PS (2)
-          </a>
-        </li>
-      
-        <li class="categorys-list-item">
-          <a href="/categories/elementUI/">
-            elementUI (1)
-          </a>
-        </li>
-      
-        <li class="categorys-list-item">
           <a href="/categories/CSS/">
             CSS (1)
-          </a>
-        </li>
-      
-        <li class="categorys-list-item">
-          <a href="/categories/PS/photoshop/">
-            photoshop (2)
           </a>
         </li>
       
@@ -312,8 +306,26 @@
         </li>
       
         <li class="categorys-list-item">
+          <a href="/categories/elementUI/">
+            elementUI (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/PS/">
+            PS (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
           <a href="/categories/VUE/">
             VUE (4)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/PS/photoshop/">
+            photoshop (2)
           </a>
         </li>
       
