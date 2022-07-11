@@ -23,7 +23,7 @@
 
   
 
-  <title>vue 项目中动态修改浏览器标题(四步) | 霖霏晗的blog</title>
+  <title>JS面试题 | 霖霏晗的blog</title>
 
   
 
@@ -46,7 +46,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://linmuhan.gitee.io/links/Asset/menu07.jpg)"></div>
+    <div class="post-image" style="background-image: url(https://linmuhan.gitee.io/links/Asset/menu10.jpg)"></div>
   
 
   <!-- navbar -->
@@ -99,20 +99,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">vue 项目中动态修改浏览器标题(四步)</h1>
+          <h1 class="title-wrap">JS面试题</h1>
           <h2 class="title-sub-wrap">
             <strong>霖霏晗</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-01-04T07:11:07.254Z" itemprop="datePublished">2022-01-04</time>
+            <time  class="article-date" datetime="2022-07-09T16:00:00.000Z" itemprop="datePublished">2022-07-10</time>
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/VUE/">📒 VUE</a></li>
+    <li><a href="/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/">📒 前端面试</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/vue/">🏷️ vue</a></li>
+    <li><a href="/tags/JS/">🏷️ JS</a></li>
   
 </ul>
         </div>
@@ -136,32 +136,40 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss">npm vue-wechat-<span class="hljs-built_in">title</span> --<span class="hljs-keyword">save</span><br></code></pre></td></tr></table></figure>
-<h3 id="在main-js里面引入插件"><a href="#在main-js里面引入插件" class="headerlink" title="在main.js里面引入插件"></a>在main.js里面引入插件</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs clean"><span class="hljs-keyword">import</span> VueWechatTitle <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-wechat-title&#x27;</span><span class="hljs-comment">//动态修改title</span><br>Vue.use(VueWechatTitle)<br></code></pre></td></tr></table></figure>
-<h3 id="在路由里面-添加title"><a href="#在路由里面-添加title" class="headerlink" title="在路由里面 添加title"></a>在路由里面 添加title</h3><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript">routes: [&#123;<br>    path: <span class="hljs-string">&#x27;&#x27;</span>,<br>    name: <span class="hljs-string">&#x27;&#x27;</span>,<br>    component: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;&#x27;</span>),<br>    meta: &#123; title: <span class="hljs-string">&#x27;标题&#x27;</span> &#125;<br>  &#125;]<br></code></pre></td></tr></table></figure>
-<h3 id="在app-vue-中添加-指令-v-wechat-title"><a href="#在app-vue-中添加-指令-v-wechat-title" class="headerlink" title="在app.vue 中添加 指令 v-wechat-title"></a>在app.vue 中添加 指令 v-wechat-title</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">&lt;router-<span class="hljs-built_in">view</span> v-wechat-<span class="hljs-built_in">title</span>=&#x27;$route.meta.<span class="hljs-built_in">title</span>&#x27; /&gt;<br></code></pre></td></tr></table></figure>
+        <h3 id="js基本数据类型"><a href="#js基本数据类型" class="headerlink" title="js基本数据类型"></a>js基本数据类型</h3><ul>
+<li>基本数据类型：Number、String、Boolean、Null 、 Undefind 、Symbol（es6新增，特点：唯一性）、Bigint（es10新增,大整数使用） 是直接按值存放的，所以可以直接访问。</li>
+<li>引用数据类型：Object、Array、Function（当我们需要访问这三种引用类型的值时，首先得从栈中获得该对象的地址指针，然后再从堆内存中取得所需的数据。）<h3 id="检测基本数据类型的方式"><a href="#检测基本数据类型的方式" class="headerlink" title="检测基本数据类型的方式"></a>检测基本数据类型的方式</h3></li>
+<li>typeof</li>
+<li>instanceof</li>
+<li>Object.prototype.toString.call(obj)</li>
+<li>constructor<h3 id="js栈和堆的区别"><a href="#js栈和堆的区别" class="headerlink" title="js栈和堆的区别"></a>js栈和堆的区别</h3></li>
+<li>基本数据类型都是直接按值存放在栈内存中，占用的内存空间的大小是确定的，并由系统自动分配和自动释放</li>
+<li>引用数据类型存放在堆内存中</li>
+<li>栈(stack):由操作系统自动分配内存空间，自动释放，存储的是基础变量以及一些对象的引用变量，占据固定大小的空间</li>
+<li>堆(heap):由操作系统动态分配的内存，大小不定也不会自动释放，一般由程序员分配释放，也可由垃圾回收机制回收<h3 id="cookies，sessionStorage和localStorage的区别"><a href="#cookies，sessionStorage和localStorage的区别" class="headerlink" title="cookies，sessionStorage和localStorage的区别"></a>cookies，sessionStorage和localStorage的区别</h3><h6 id="相同点"><a href="#相同点" class="headerlink" title="相同点:"></a>相同点:</h6></li>
+<li>存在浏览器端<h6 id="不同点"><a href="#不同点" class="headerlink" title="不同点:"></a>不同点:</h6></li>
+<li>Cookie数据不能超过4k,只能保存很小的数据，Cookies:服务器和客户端都可以访问有时间限制</li>
+<li>sessionStorage：仅在当前浏览器窗口关闭前有效, <strong>PC浏览器（关闭窗口就删除数据）</strong></li>
+<li>localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据,<strong>PC浏览器（永久保存)</strong><h6 id="用法-localStorage同理-sessionStorage"><a href="#用法-localStorage同理-sessionStorage" class="headerlink" title="用法:localStorage同理 sessionStorage"></a>用法:localStorage同理 sessionStorage</h6></li>
+</ul>
+<ul>
+<li>localStorage.setItem(key,value)保存数据</li>
+<li>localStorage.getItem(key)获取数据</li>
+<li>localStorage.removeItem(key)删除数据</li>
+<li>localStorage.clear()删除全部数据<h3 id="let-const-var区别"><a href="#let-const-var区别" class="headerlink" title="let const var区别"></a>let const var区别</h3></li>
+</ul>
+<ul>
+<li>let ,const <strong>块级作用域</strong>不具备变量提升</li>
+<li>var： <strong>具备变量提升</strong>，即变量在声明之前可以使用，返回undefined ，如果用let声明会返回报错ReferenceError</li>
+<li>const 一旦声明常量不能改变，创建常量的时候必须赋值，否者会报错，常量创建后(地址)不可更改，就是说普通的数据类型不可以修改，复杂型数据再不修改其地址的情况下是可以被更改的<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;script&gt;<br>    <span class="hljs-keyword">const</span> a = <span class="hljs-number">6</span><br>    a = <span class="hljs-number">7</span> <span class="hljs-comment">//报错</span><br>    <span class="hljs-keyword">const</span> arr = &#123; <span class="hljs-attr">age</span>:<span class="hljs-number">17</span> &#125;<br>    arr.age=<span class="hljs-number">20</span> <span class="hljs-comment">//正常</span><br>    arr =&#123;&#125; <span class="hljs-comment">//报错</span><br>    <span class="hljs-built_in">console</span>.log(arr)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h3 id="宏任务和微任务"><a href="#宏任务和微任务" class="headerlink" title="宏任务和微任务"></a>宏任务和微任务</h3></li>
+</ul>
 
       </section>
 
       
       
         <nav class="article-nav">
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://linmuhan.gitee.io/links/Asset/menu07.jpg"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2022/01/11/%E8%8E%B7%E5%8F%96url%E7%9A%84%E5%80%BC/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">获取url的值</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
           
           
             <div class="article-nav-item layout-padding">
@@ -171,8 +179,8 @@
     
     <div class="card-text">
       
-        <a href="/2022/01/04/vue-%E5%BC%BA%E5%88%B6%E5%88%B7%E6%96%B0/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">vue 强制刷新</h2>
+        <a href="/2022/03/31/vue%E6%96%87%E4%BB%B6js%E5%92%8Ccss-%E6%8A%BD%E7%A6%BB/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">vue文件js和css 抽离</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -259,7 +267,7 @@
     <span>TOC</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">安装插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8main-js%E9%87%8C%E9%9D%A2%E5%BC%95%E5%85%A5%E6%8F%92%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">在main.js里面引入插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E8%B7%AF%E7%94%B1%E9%87%8C%E9%9D%A2-%E6%B7%BB%E5%8A%A0title"><span class="toc-number">3.</span> <span class="toc-text">在路由里面 添加title</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8app-vue-%E4%B8%AD%E6%B7%BB%E5%8A%A0-%E6%8C%87%E4%BB%A4-v-wechat-title"><span class="toc-number">4.</span> <span class="toc-text">在app.vue 中添加 指令 v-wechat-title</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#js%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">js基本数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">检测基本数据类型的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js%E6%A0%88%E5%92%8C%E5%A0%86%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">js栈和堆的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookies%EF%BC%8CsessionStorage%E5%92%8ClocalStorage%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">cookies，sessionStorage和localStorage的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%9B%B8%E5%90%8C%E7%82%B9"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">相同点:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E7%82%B9"><span class="toc-number">4.0.0.2.</span> <span class="toc-text">不同点:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%94%A8%E6%B3%95-localStorage%E5%90%8C%E7%90%86-sessionStorage"><span class="toc-number">4.0.0.3.</span> <span class="toc-text">用法:localStorage同理 sessionStorage</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#let-const-var%E5%8C%BA%E5%88%AB"><span class="toc-number">5.</span> <span class="toc-text">let const var区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1"><span class="toc-number">6.</span> <span class="toc-text">宏任务和微任务</span></a></li></ol>
   </div>
 </section>
 
