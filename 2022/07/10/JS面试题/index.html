@@ -163,6 +163,41 @@
 <li>var： <strong>具备变量提升</strong>，即变量在声明之前可以使用，返回undefined ，如果用let声明会返回报错ReferenceError</li>
 <li>const 一旦声明常量不能改变，创建常量的时候必须赋值，否者会报错，常量创建后(地址)不可更改，就是说普通的数据类型不可以修改，复杂型数据再不修改其地址的情况下是可以被更改的<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;script&gt;<br>    <span class="hljs-keyword">const</span> a = <span class="hljs-number">6</span><br>    a = <span class="hljs-number">7</span> <span class="hljs-comment">//报错</span><br>    <span class="hljs-keyword">const</span> arr = &#123; <span class="hljs-attr">age</span>:<span class="hljs-number">17</span> &#125;<br>    arr.age=<span class="hljs-number">20</span> <span class="hljs-comment">//正常</span><br>    arr =&#123;&#125; <span class="hljs-comment">//报错</span><br>    <span class="hljs-built_in">console</span>.log(arr)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 <h3 id="宏任务和微任务"><a href="#宏任务和微任务" class="headerlink" title="宏任务和微任务"></a>宏任务和微任务</h3></li>
+<li>宏任务:常见的定时器,用户交互事件等等.（宏任务就是特定的这些个任务,没什么特殊含义）,包括整体代码script，setTimeout，setInterval，UI 交互等</li>
+<li>微任务:Promise相关任务,MutationObserver等</li>
+<li>微任务比宏任务有更高优先级<h3 id="闭包的原理"><a href="#闭包的原理" class="headerlink" title="闭包的原理"></a>闭包的原理</h3></li>
+<li>在 JS 中，闭包存在的意义就是让我们可以间接访问函数内部的变量。</li>
+<li>优点：可以让函数不被回收</li>
+<li>缺点：不及时释放的变量，会造成内存泄漏<h3 id="JS防抖和节流（动作绑定事件）"><a href="#JS防抖和节流（动作绑定事件）" class="headerlink" title="JS防抖和节流（动作绑定事件）"></a>JS防抖和节流（动作绑定事件）</h3></li>
+<li>防抖：<strong>（表单提交，多次点击请求一次）</strong> 动作发生一定时间后触发事件，在这段时间内如果动作又发生，则重新等待一段时间再触发该事件。</li>
+<li>节流： <strong>（用户滚动页面）</strong> ，动作发生一定时间后触发事件，在这段时间内，如果动作又发生，则无视该操作，直到事件执行完毕后，才能重新触发<h3 id="js事件委托-事件代理"><a href="#js事件委托-事件代理" class="headerlink" title="js事件委托(事件代理)"></a>js事件委托(事件代理)</h3></li>
+<li>事件委托是利用事件的冒泡原理来实现的</li>
+<li>利用事件冒泡的原理，让自己的所触发的事件，让他的父元素代替执行！js事件委托利用了事件冒泡.只指定一个事件处理程序，就可以管理某一类型的所有事件</li>
+<li>事件捕获-目标-事件冒泡</li>
+<li>作用:节约内存，提高整体性能</li>
+<li>在vue用修饰符@click.stop=”函数名” 阻止冒泡<h3 id="js数组有哪些方法（es5-和es6）"><a href="#js数组有哪些方法（es5-和es6）" class="headerlink" title="js数组有哪些方法（es5 和es6）"></a>js数组有哪些方法（es5 和es6）</h3></li>
+<li>Array.isArray(value) 判断一个值是否为数组</li>
+<li>concat 合并数组</li>
+<li>push() 从后面添加元素，返回值为添加完后的数组的长度</li>
+<li>pop() 从后面删除元素，只能是一个</li>
+<li>shift() 从前面删除元素，只能删除一个</li>
+<li>unshift() 从前面添加元素</li>
+<li>splice(i,n) 删除从i(索引值)开始之后的n元素</li>
+<li>split() 将字符串转化为数组</li>
+<li>reverse() 将数组反转</li>
+<li>sort() 将数组进行排序,</li>
+<li>slice(start,end) 切去索引值start到索引值end的数组，不包含end索引的值，</li>
+<li>includes() 判断数中是否包含给定的值</li>
+<li>some()  依据判断条件，数组的元素是否有一个满足，若有一个满足则返回ture</li>
+<li>join() 拼接数组<h3 id="JS内存泄漏与垃圾回收机制"><a href="#JS内存泄漏与垃圾回收机制" class="headerlink" title="JS内存泄漏与垃圾回收机制"></a>JS内存泄漏与垃圾回收机制</h3></li>
+<li>内存泄漏：用到的内存，一些不需要的变量引用没有及时释放，就叫做内存泄漏。</li>
+<li>垃圾回收机制：解决内存的泄露，垃圾回收机制会定期（周期性）找出那些不再用到的内存（变量），然后释放其内存。</li>
+<li>通常采用的垃圾回收机制有两种方法：标记清除，引用计数。</li>
+<li>引用计数：语言引擎有一张”引用表”，保存了内存里面所有资源（通常是各种值）的引用次数。如果一个值的引用次数是0，就表示这个值不再用到了<h3 id="new操作符具体干了什么呢"><a href="#new操作符具体干了什么呢" class="headerlink" title="new操作符具体干了什么呢?"></a>new操作符具体干了什么呢?</h3></li>
+<li>创建一个空对象: 并且this变量引入该对象,同时还继承了函数的原型</li>
+<li>设置原型链 空对象指向构造函数的原型对象</li>
+<li>执行函数体 修改构造函数this指针指向空对象,并执行函数体</li>
+<li>判断返回值 返回对象就用该对象,没有的话就创建一个对象</li>
 </ul>
 
       </section>
@@ -170,6 +205,20 @@
       
       
         <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2022/07/12/HTML-CSS-%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">HTML/CSS 面试题</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
           
           
             <div class="article-nav-item layout-padding">
@@ -240,7 +289,7 @@
         <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
 </svg>
-        <span>16</span>
+        <span>17</span>
       </div>
       <div class="count-box--item">
         <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -252,7 +301,7 @@
         <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
 </svg>
-        12
+        14
       </div>
     </div>
   </div>
@@ -267,7 +316,7 @@
     <span>TOC</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#js%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">js基本数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">检测基本数据类型的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js%E6%A0%88%E5%92%8C%E5%A0%86%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">js栈和堆的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookies%EF%BC%8CsessionStorage%E5%92%8ClocalStorage%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">cookies，sessionStorage和localStorage的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%9B%B8%E5%90%8C%E7%82%B9"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">相同点:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E7%82%B9"><span class="toc-number">4.0.0.2.</span> <span class="toc-text">不同点:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%94%A8%E6%B3%95-localStorage%E5%90%8C%E7%90%86-sessionStorage"><span class="toc-number">4.0.0.3.</span> <span class="toc-text">用法:localStorage同理 sessionStorage</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#let-const-var%E5%8C%BA%E5%88%AB"><span class="toc-number">5.</span> <span class="toc-text">let const var区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1"><span class="toc-number">6.</span> <span class="toc-text">宏任务和微任务</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#js%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">js基本数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">检测基本数据类型的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js%E6%A0%88%E5%92%8C%E5%A0%86%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">js栈和堆的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookies%EF%BC%8CsessionStorage%E5%92%8ClocalStorage%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">cookies，sessionStorage和localStorage的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%9B%B8%E5%90%8C%E7%82%B9"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">相同点:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E7%82%B9"><span class="toc-number">4.0.0.2.</span> <span class="toc-text">不同点:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%94%A8%E6%B3%95-localStorage%E5%90%8C%E7%90%86-sessionStorage"><span class="toc-number">4.0.0.3.</span> <span class="toc-text">用法:localStorage同理 sessionStorage</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#let-const-var%E5%8C%BA%E5%88%AB"><span class="toc-number">5.</span> <span class="toc-text">let const var区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1"><span class="toc-number">6.</span> <span class="toc-text">宏任务和微任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">7.</span> <span class="toc-text">闭包的原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81%EF%BC%88%E5%8A%A8%E4%BD%9C%E7%BB%91%E5%AE%9A%E4%BA%8B%E4%BB%B6%EF%BC%89"><span class="toc-number">8.</span> <span class="toc-text">JS防抖和节流（动作绑定事件）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98-%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86"><span class="toc-number">9.</span> <span class="toc-text">js事件委托(事件代理)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js%E6%95%B0%E7%BB%84%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B9%E6%B3%95%EF%BC%88es5-%E5%92%8Ces6%EF%BC%89"><span class="toc-number">10.</span> <span class="toc-text">js数组有哪些方法（es5 和es6）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E4%B8%8E%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6"><span class="toc-number">11.</span> <span class="toc-text">JS内存泄漏与垃圾回收机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#new%E6%93%8D%E4%BD%9C%E7%AC%A6%E5%85%B7%E4%BD%93%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88%E5%91%A2"><span class="toc-number">12.</span> <span class="toc-text">new操作符具体干了什么呢?</span></a></li></ol>
   </div>
 </section>
 
@@ -298,13 +347,7 @@
       
         <li class="categorys-list-item">
           <a href="/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/">
-            前端面试 (1)
-          </a>
-        </li>
-      
-        <li class="categorys-list-item">
-          <a href="/categories/PS/">
-            PS (2)
+            前端面试 (2)
           </a>
         </li>
       
@@ -321,8 +364,8 @@
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/PS/photoshop/">
-            photoshop (2)
+          <a href="/categories/PS/">
+            PS (2)
           </a>
         </li>
       
@@ -333,14 +376,20 @@
         </li>
       
         <li class="categorys-list-item">
+          <a href="/categories/VUE/">
+            VUE (4)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
           <a href="/categories/CSS/H5/">
             H5 (1)
           </a>
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/VUE/">
-            VUE (4)
+          <a href="/categories/PS/photoshop/">
+            photoshop (2)
           </a>
         </li>
       
@@ -363,7 +412,7 @@
   </div>
   <div class="widget-body">
     <div class="tags-cloud">
-      <a href="/tags/H5/" style="font-size: 10px;" class="tags-cloud-0">H5</a> <a href="/tags/JS/" style="font-size: 10px;" class="tags-cloud-0">JS</a> <a href="/tags/PS/" style="font-size: 13.33px;" class="tags-cloud-3">PS</a> <a href="/tags/elementUI/" style="font-size: 10px;" class="tags-cloud-0">elementUI</a> <a href="/tags/git/" style="font-size: 10px;" class="tags-cloud-0">git</a> <a href="/tags/h5/" style="font-size: 10px;" class="tags-cloud-0">h5</a> <a href="/tags/javascript/" style="font-size: 10px;" class="tags-cloud-0">javascript</a> <a href="/tags/js/" style="font-size: 16.67px;" class="tags-cloud-7">js</a> <a href="/tags/localStorage/" style="font-size: 10px;" class="tags-cloud-0">localStorage</a> <a href="/tags/mac/" style="font-size: 10px;" class="tags-cloud-0">mac</a> <a href="/tags/sessionStorage/" style="font-size: 10px;" class="tags-cloud-0">sessionStorage</a> <a href="/tags/vue/" style="font-size: 20px;" class="tags-cloud-10">vue</a>
+      <a href="/tags/CSS/" style="font-size: 10px;" class="tags-cloud-0">CSS</a> <a href="/tags/H5/" style="font-size: 10px;" class="tags-cloud-0">H5</a> <a href="/tags/HTML/" style="font-size: 10px;" class="tags-cloud-0">HTML</a> <a href="/tags/JS/" style="font-size: 10px;" class="tags-cloud-0">JS</a> <a href="/tags/PS/" style="font-size: 13.33px;" class="tags-cloud-3">PS</a> <a href="/tags/elementUI/" style="font-size: 10px;" class="tags-cloud-0">elementUI</a> <a href="/tags/git/" style="font-size: 10px;" class="tags-cloud-0">git</a> <a href="/tags/h5/" style="font-size: 10px;" class="tags-cloud-0">h5</a> <a href="/tags/javascript/" style="font-size: 10px;" class="tags-cloud-0">javascript</a> <a href="/tags/js/" style="font-size: 16.67px;" class="tags-cloud-7">js</a> <a href="/tags/localStorage/" style="font-size: 10px;" class="tags-cloud-0">localStorage</a> <a href="/tags/mac/" style="font-size: 10px;" class="tags-cloud-0">mac</a> <a href="/tags/sessionStorage/" style="font-size: 10px;" class="tags-cloud-0">sessionStorage</a> <a href="/tags/vue/" style="font-size: 20px;" class="tags-cloud-10">vue</a>
     </div>
   </div>
 </section>

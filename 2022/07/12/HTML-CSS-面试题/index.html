@@ -23,7 +23,7 @@
 
   
 
-  <title>localStorage和sessionStorage用法 | 霖霏晗的blog</title>
+  <title>HTML/CSS 面试题 | 霖霏晗的blog</title>
 
   
 
@@ -46,7 +46,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://linmuhan.gitee.io/links/Asset/menu03.jpg)"></div>
+    <div class="post-image" style="background-image: url(https://linmuhan.gitee.io/links/Asset/menu10.jpg)"></div>
   
 
   <!-- navbar -->
@@ -99,22 +99,22 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">localStorage和sessionStorage用法</h1>
+          <h1 class="title-wrap">HTML/CSS 面试题</h1>
           <h2 class="title-sub-wrap">
             <strong>霖霏晗</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2021-10-27T08:28:16.000Z" itemprop="datePublished">2021-10-27</time>
+            <time  class="article-date" datetime="2022-07-11T16:00:00.000Z" itemprop="datePublished">2022-07-12</time>
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/JS/">📒 JS</a></li>
+    <li><a href="/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/">📒 前端面试</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/localStorage/">🏷️ localStorage</a></li>
+    <li><a href="/tags/HTML/">🏷️ HTML</a></li>
   
-    <li><a href="/tags/sessionStorage/">🏷️ sessionStorage</a></li>
+    <li><a href="/tags/CSS/">🏷️ CSS</a></li>
   
 </ul>
         </div>
@@ -138,27 +138,33 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> arr=[&#123;<br>                <span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;小名&#x27;</span>,<br>                <span class="hljs-attr">sex</span>:<span class="hljs-string">&#x27;男&#x27;</span><br>            &#125;,&#123;<br>                <span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;Amy&#x27;</span>,<br>                <span class="hljs-attr">sex</span>:<span class="hljs-string">&#x27;女&#x27;</span><br>            &#125;]<br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>存值</p>
-</blockquote>
-<hr>
-<p>localStorage.setItem(“userInfo”,JSON.stringify(arr)); //存储之前数组转换为字符串<br>sessionStorage.setItem(“userInfo”,JSON.stringify(arr));</p>
-<blockquote>
-<p>取值</p>
-</blockquote>
-<hr>
-<p>var user = JSON.parse(localStorage.getItem(“userInfo”))<br>var user1 = JSON.parse(sessionStorage.getItem(“userInfo”))</p>
-<blockquote>
-<p>删除指定字段</p>
-</blockquote>
-<hr>
-<p>localStorage.removeItem(“userInfo”);<br>sessionStorage.removeItem(“userInfo”);</p>
-<blockquote>
-<p>全部清空</p>
-</blockquote>
-<hr>
-<p>localStorage.clear();<br>sessionStorage.clear();</p>
+        <h3 id="Html语义化"><a href="#Html语义化" class="headerlink" title="Html语义化"></a>Html语义化</h3><ul>
+<li>h1~H6,strong, header,nav,main,article,section,footer</li>
+<li>语义化优点：</li>
+</ul>
+<ol>
+<li><input disabled="" type="checkbox"> 易于用户阅读，样式丢失的时候能让页面呈现清晰的结构。</li>
+<li><input disabled="" type="checkbox"> 有利于SEO，搜索引擎根据标签来确定上下文和各个关键字的权重。 </li>
+<li><input disabled="" type="checkbox"> 方便其他设备解析，如盲人阅读器根据语义渲染网页</li>
+<li><input disabled="" type="checkbox"> 有利于开发和维护，语义化更具可读性，代码更好维护，与CSS3关系更和谐。<h3 id="em和rem，vh-vw的区别"><a href="#em和rem，vh-vw的区别" class="headerlink" title="em和rem，vh, vw的区别"></a>em和rem，vh, vw的区别</h3></li>
+</ol>
+<ul>
+<li>rem 是根据html根节点定义的,一般一个项目里面创建一个公共js文件，文件里面配置1rem等于多少px</li>
+<li>em是根据父元素定义的，他们都是相对单位，在移动端适配不同手机的屏幕</li>
+<li>px相对长度单位，网页设计常用的基本单位。像素px是相对于显示器屏幕分辨率而言的em 是相对于父级的字体大小,</li>
+<li>rem是相对于HTML根元素的字体大小,</li>
+<li>vh 和vw相对于视口的高度和宽度,1vh 等于1/100的视口高度，1vw 等于1/100的视口宽度<h3 id="css定位"><a href="#css定位" class="headerlink" title="css定位"></a>css定位</h3></li>
+<li>静态定位（static） 一般的标签元素不加任何定位属性都属于静态定位，在页面的最底层属于标准流。</li>
+<li>绝对定位（absolute） 如果父元素设置了position:relative或position:absolute及position:fixed，那么它就会相对于它的父元素来定位，如果父级元素没有就相对于body定位</li>
+<li>相对定位（relative） 相对定位是根据自己定位的</li>
+<li>固定定位（fixed） 是相对于浏览器窗口定位，并且不会随着滚动条进行滚动。</li>
+<li>绝对定位和相对定位区别 相对定位不会删除它本身在文档流中占据的空间，其他元素不可以占据该空间，而绝对定位则会删除掉该元素在文档流中的位置，使其完全从文档流中抽了出来，其他元素可以占据其空间，可以通过z-index来设置它们的堆叠顺序<h3 id="Css盒模型"><a href="#Css盒模型" class="headerlink" title="Css盒模型"></a>Css盒模型</h3></li>
+<li>盒子模型指的是元素在网页中的实际占位包括标准盒模型和IE盒模型</li>
+<li>标准盒模型包括content padding border margin 宽高指的是content</li>
+<li>IE盒模型包括内容和margin，内容包括border ，padding content 宽高指的是border padding content</li>
+<li>css样式： box-sizing :content-box (标准盒模型) box-sizing：border-box （ie盒模型）</li>
+<li>区别：IE盒子模型的content的多了boder和padding 如果统一盒子模型在html页面顶部添加<!DOCTYPE html></li>
+</ul>
 
       </section>
 
@@ -166,32 +172,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://linmuhan.gitee.io/links/Asset/home.jpg"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2021/10/28/git%E5%91%BD%E4%BB%A4/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">git常用命令(持续更新。。。)</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://linmuhan.gitee.io/links/Asset/menu05.jpg"></div>
-    
     <div class="card-text">
       
-        <a href="/2021/10/24/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%B0%83%E8%AF%95%E6%9F%A5%E7%9C%8B%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%BF%A1%E6%81%AFvConsole/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">移动端调试查看控制台信息vConsole</h2>
+        <a href="/2022/07/10/JS%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">JS面试题</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -270,6 +258,18 @@
 </section>
 
       
+<section class="widget-toc widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-toc" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M134.50666666 767.46666668H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.23999999v50.13333333c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H134.50666666c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.13333333c0.10666668-27.73333333 22.50666668-50.24000001 50.24000001-50.24000001zM84.37333332 541.65333333h326.18666669c27.73333333 0 50.24000001 22.39999999 50.23999999 50.13333334v50.24000001c0 27.73333333-22.50666668 50.24000001-50.24000002 50.23999999H84.37333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.23999999v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333334zM134.50666666 315.83999999H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.24000001v50.24000001c0 27.73333333-22.50666668 50.13333334-50.24000001 50.13333333H134.50666666c-27.73333333 0-50.24000001-22.39999999-50.23999999-50.13333333v-50.24000001c0.10666668-27.84000001 22.50666668-50.24000001 50.24000001-50.23999999zM209.81333332 89.91999999h326.18666671c27.73333333 0 50.24000001 22.39999999 50.23999997 50.13333335v50.23999999c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H209.81333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333333zM692.05333333 623.36l274.66666669 176.00000002c23.36000001 14.93333333 30.08 45.97333334 15.14666666 69.33333332L954.77333334 910.93333333c-14.93333333 23.25333334-45.97333334 30.08-69.33333335 15.14666667l-274.66666666-176c-23.36000001-14.93333333-30.08-45.97333334-15.14666667-69.33333333l27.09333334-42.24000001c14.93333333-23.36000001 46.08000001-30.08 69.33333333-15.14666666z" fill="currentColor"></path>
+</svg>
+    <span>TOC</span>
+  </div>
+  <div class="widget-body">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Html%E8%AF%AD%E4%B9%89%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">Html语义化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#em%E5%92%8Crem%EF%BC%8Cvh-vw%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.</span> <span class="toc-text">em和rem，vh, vw的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css%E5%AE%9A%E4%BD%8D"><span class="toc-number">3.</span> <span class="toc-text">css定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Css%E7%9B%92%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">Css盒模型</span></a></li></ol>
+  </div>
+</section>
+
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
