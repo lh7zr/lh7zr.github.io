@@ -171,9 +171,19 @@
 <li>动画尽量使用CSS3动画属性来实现，开启GPU硬件加速；</li>
 <li>图片在加载前提前指定宽高或者脱离文档流，可避免加载后的重新计算导致的页面回流；</li>
 <li>css文件在<head>标签中引入，js文件在<body>标签中引入，优化关键渲染路径；</li>
-<li> 加速或者减少HTTP请求，使用CDN加载静态资源，合理使用浏览器强缓存和协商缓存，小图片可以使用Base64来代替，合理使用浏览器的预取指令prefetch和预加载指令preload；</li>
-<li> 压缩混淆代码，删除无用代码，代码拆分来减少文件体积；</li>
-<li> 小图片使用雪碧图，图片选择合适的质量、尺寸和格式，避免流量浪费</li>
+<li>加速或者减少HTTP请求，使用CDN加载静态资源，合理使用浏览器强缓存和协商缓存，小图片可以使用Base64来代替，合理使用浏览器的预取指令prefetch和预加载指令preload；</li>
+<li>压缩混淆代码，删除无用代码，代码拆分来减少文件体积；</li>
+<li>小图片使用雪碧图，图片选择合适的质量、尺寸和格式，避免流量浪费<h3 id="什么是http-和http请求方法"><a href="#什么是http-和http请求方法" class="headerlink" title="什么是http 和http请求方法"></a>什么是http 和http请求方法</h3><h4 id="什么是http"><a href="#什么是http" class="headerlink" title="什么是http"></a>什么是http</h4></li>
+<li>HTTP，即超文本传输协议，是一种实现客户端和服务器之间通信的响应协议，它是用作客户端和服务器之间的请求。 </li>
+<li>客户端（浏览器）会向服务器提交HTTP请求；然后服务器向客户端返回响应；其中响应包含有关请求的状态信息，还可能包含请求的内容。<h4 id="HTTP的常用方法"><a href="#HTTP的常用方法" class="headerlink" title="HTTP的常用方法"></a>HTTP的常用方法</h4></li>
+<li>GET方法: GET方法用于使用给定的URI从给定服务器中检索信息，即从指定资源中请求数据。使用GET方法的请求应该只是检索数据，并且不应对数据产生其他影响。<br>在GET请求的URL中发送查询字符串（名称/值对），需要这样写： /test/demo_form.php?name1=value1&amp;name2=value2<br>说明:GET请求是可以缓存的，我们可以从浏览器历史记录中查找到GET请求，还可以把它收藏到书签中；且GET请求有长度限制，仅用于请求数据（不修改）。<br>注：因GET请求的不安全性，在处理敏感数据时，绝不可以使用GET请求。</li>
+<li>POST方法:用于将数据发送到服务器以创建或更新资源，它要求服务器确认请求中包含的内容作为由URI区分的Web资源的另一个下属。<br>POST请求永远不会被缓存，且对数据长度没有限制；我们无法从浏览器历史记录中查找到POST请求。</li>
+<li>HEAD方法 HEAD方法与GET方法相同，但没有响应体，仅传输状态行和标题部分。这对于恢复相应头部编写的元数据非常有用，而无需传输整个内容。</li>
+<li>PUT方法 用于将数据发送到服务器以创建或更新资源，它可以用上传的内容替换目标资源中的所有当前内容。<br>它会将包含的元素放在所提供的URI下，如果URI指示的是当前资源，则会被改变。如果URI未指示当前资源，则服务器可以使用该URI创建资源。</li>
+<li>DELETE方法 用来删除指定的资源，它会删除URI给出的目标资源的所有当前内容。</li>
+<li>CONNECT方法 用来建立到给定URI标识的服务器的隧道；它通过简单的TCP / IP隧道更改请求连接，通常实使用解码的HTTP代理来进行SSL编码的通信（HTTPS）。</li>
+<li>OPTIONS方法 用来描述了目标资源的通信选项，会返回服务器支持预定义URL的HTTP策略。</li>
+<li>TRACE方法 TRACE方法用于沿着目标资源的路径执行消息环回测试；它回应收到的请求，以便客户可以看到中间服务器进行了哪些（假设任何）进度或增量</li>
 </ul>
 
       </section>
@@ -290,7 +300,7 @@
     <span>TOC</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Html%E8%AF%AD%E4%B9%89%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">Html语义化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#em%E5%92%8Crem%EF%BC%8Cvh-vw%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.</span> <span class="toc-text">em和rem，vh, vw的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css%E5%AE%9A%E4%BD%8D"><span class="toc-number">3.</span> <span class="toc-text">css定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Css%E7%9B%92%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">Css盒模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-number">5.</span> <span class="toc-text">前端性能优化方案</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Html%E8%AF%AD%E4%B9%89%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">Html语义化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#em%E5%92%8Crem%EF%BC%8Cvh-vw%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.</span> <span class="toc-text">em和rem，vh, vw的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css%E5%AE%9A%E4%BD%8D"><span class="toc-number">3.</span> <span class="toc-text">css定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Css%E7%9B%92%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">Css盒模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-number">5.</span> <span class="toc-text">前端性能优化方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFhttp-%E5%92%8Chttp%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text">什么是http 和http请求方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFhttp"><span class="toc-number">6.1.</span> <span class="toc-text">什么是http</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">6.2.</span> <span class="toc-text">HTTP的常用方法</span></a></li></ol></li></ol>
   </div>
 </section>
 
@@ -344,14 +354,14 @@
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/JS/">
-            JS (2)
+          <a href="/categories/PS/photoshop/">
+            photoshop (2)
           </a>
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/PS/photoshop/">
-            photoshop (2)
+          <a href="/categories/JS/">
+            JS (2)
           </a>
         </li>
       
