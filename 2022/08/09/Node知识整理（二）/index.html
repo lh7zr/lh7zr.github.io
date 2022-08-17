@@ -23,7 +23,7 @@
 
   
 
-  <title>tags | 霖霏晗的blog</title>
+  <title>Node知识整理（二） | 霖霏晗的blog</title>
 
   
 
@@ -44,7 +44,7 @@
   <div class="root-container">
     
 <!-- header container -->
-<header class="header-container">
+<header class="header-container post">
   
     <div class="post-image" style="background-image: url(https://linmuhan.gitee.io/links/Asset/menu10.jpg)"></div>
   
@@ -96,36 +96,133 @@
 
   
   
-
-  
-  
     <div class="header-content">
-      <div class="post-text layout-block layout-padding">
-        <h1 class="title-wrap">tags</h1>
-        
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">Node知识整理（二）</h1>
+          <h2 class="title-sub-wrap">
+            <strong>霖霏晗</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2022-08-08T16:00:00.000Z" itemprop="datePublished">2022-08-09</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/NODE/">📒 NODE</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/NODE/">🏷️ NODE</a></li>
+  
+</ul>
+        </div>
       </div>
     </div>
+  
+
+  
   
   
 </header>
 
-    <!-- 分页(其他自定义页面) -->
+    <!-- 文章 -->
 
-<!-- 自定义页面 -->
-
+<!-- 文章内容 -->
 <div class="body-container">
   <article class="content-container layout-block post-container">
     <div class="article-info">
       
+      
+      
+      
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        
+        <h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><h3 id="模块的加载机制"><a href="#模块的加载机制" class="headerlink" title="模块的加载机制"></a>模块的加载机制</h3><ul>
+<li>优先从缓存中加载<blockquote>
+<p>模块在第一次加载后会被缓存，<br>注意：不论是内置模块。自定义模块，第三方模块，他们都会优先从缓存中加载，从而<strong>提高模块的加载效率</strong></p>
+</blockquote>
+</li>
+<li><strong>内置模块</strong>的加载机制<blockquote>
+<p>内置模块由node.js 官方提供的模块，<strong>内置模块的加载优先级最高</strong></p>
+</blockquote>
+</li>
+<li>自定义模块的加载机制<blockquote>
+<p>使用 require() 加载自定义模块时，必须指定./ 或 ../ 开头的路径标识符，在加载自定义模块时，如果没有./ 或 ../ 这样的路径标识符，node会把它当成内置模块或第三方模块进行加载<br>在 require() 导入自定义模块时，如果省略了文件的扩展名，则Node.js会按照顺序分别尝试加载以下的文件</p>
+<blockquote>
+<p>1.按照确切的文件名加载<br>2.补全.js扩展名进行加载<br>3.补全.json扩展名进行加载<br>4.补全.node扩展名进行加载<br>5.加载失败，终端报错</p>
+</blockquote>
+</blockquote>
+</li>
+<li>第三方模块的加载机制<blockquote>
+<p>如果没有找到对应的第三方模块，则移动到再上一层父目录中，进行加载，直到文件系统的根目录</p>
+</blockquote>
+<h2 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h2></li>
+<li>Express是基于node.js的平台，快速，开放，极简的web前端框架</li>
+<li>本质: 是npm 的第三方包，提供了快速创建web服务器的便捷方法</li>
+<li>中文官网：<a target="_blank" rel="noopener" href="https://www.expressjs.com.cn/">https://www.expressjs.com.cn</a></li>
+<li>安装命令：npm install express –save<h3 id="Express-能做什么？？"><a href="#Express-能做什么？？" class="headerlink" title="Express 能做什么？？"></a>Express 能做什么？？</h3></li>
+<li>使用 Express 我们可以方便，快速的创建Web网站的服务器和API接口的服务器<h3 id="创建基本的服务器"><a href="#创建基本的服务器" class="headerlink" title="创建基本的服务器"></a>创建基本的服务器</h3></li>
+<li>前提： 安装了 express<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 1.导入 Express</span><br><span class="hljs-keyword">const</span> express =<span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>)<br><span class="hljs-comment">// 2. 创建web服务器</span><br><span class="hljs-keyword">const</span> app = express()<br><span class="hljs-comment">// 3. 调用app.listen(端口号，启动成功的回调函数) 启动web服务器</span><br>app.listen(<span class="hljs-number">8088</span>,<span class="hljs-function">()=&gt;</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;express server running at http://127.0.0.1:8088&#x27;</span>)<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h3 id="监听-GET-请求-和-POST-请求"><a href="#监听-GET-请求-和-POST-请求" class="headerlink" title="监听 GET 请求 和  POST 请求"></a>监听 GET 请求 和  POST 请求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 1.导入 Express</span><br><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>)<br><span class="hljs-comment">// 2. 创建web服务器</span><br><span class="hljs-keyword">const</span> app = express()<br><span class="hljs-comment">// 4. 监听客户端的 GET 和 POST 请求，并向客户端响应具体的内容</span><br>app.get(<span class="hljs-string">&#x27;/user&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> &#123;<br><span class="hljs-comment">//调用express 提供的res.send() 方法，向客户端响应一个JSON 对象</span><br>    res.send(&#123;<br>        <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;lfh&#x27;</span>,<br>        <span class="hljs-attr">age</span>: <span class="hljs-number">29</span>,<br>        <span class="hljs-attr">gender</span>: <span class="hljs-string">&#x27;男&#x27;</span><br>    &#125;)<br>&#125;)<br>app.post(<span class="hljs-string">&#x27;/user&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> &#123;<br>    <span class="hljs-comment">//调用express 提供的res.send() 方法，向客户端响应一个文本字符</span><br>    res.send(<span class="hljs-string">&#x27;请求成功&#x27;</span>)<br>&#125;)<br><span class="hljs-comment">// 3. 调用app.listen(端口号，启动成功的回调函数) 启动web服务器</span><br>app.listen(<span class="hljs-number">8088</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;express server running at http://127.0.0.1:8088&#x27;</span>)<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h3 id="如何获取url-中传递的参数呢？"><a href="#如何获取url-中传递的参数呢？" class="headerlink" title="如何获取url 中传递的参数呢？"></a>如何获取url 中传递的参数呢？</h3><h4 id="通过req-query-对象可以访问到客户端通过查询字符串的形式，发送到服务器到参数"><a href="#通过req-query-对象可以访问到客户端通过查询字符串的形式，发送到服务器到参数" class="headerlink" title="通过req.query 对象可以访问到客户端通过查询字符串的形式，发送到服务器到参数"></a>通过req.query 对象可以访问到客户端通过查询字符串的形式，发送到服务器到参数</h4></li>
+<li>注意： <strong>默认情况下，req.requry是一个空对象{}</strong><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/*在浏览器中请求接口</span><br><span class="hljs-comment">* http://127.0.0.1:8088/?user=za&amp;age=20</span><br><span class="hljs-comment">* 页面显示：&#123;&quot;user&quot;:&quot;za&quot;,&quot;age&quot;:&quot;20&quot;&#125;</span><br><span class="hljs-comment">* */</span><br><span class="hljs-comment">// 1.导入 Express</span><br><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>)<br><span class="hljs-comment">// 2. 创建web服务器</span><br><span class="hljs-keyword">const</span> app = express()<br><span class="hljs-comment">//获取url 中传递的参数呢</span><br>app.get(<span class="hljs-string">&#x27;/&#x27;</span>,<span class="hljs-function">(<span class="hljs-params">req,res</span>)=&gt;</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(req.query)<br>    <span class="hljs-comment">//通过req.query 可以获取到客户端发送过来到查询参数</span><br>    <span class="hljs-comment">//注意： 默认情况下，req.requry是一个空对象&#123;&#125;</span><br>    res.send(req.query)<br>&#125;)<br><span class="hljs-comment">// 3. 调用app.listen(端口号，启动成功的回调函数) 启动web服务器</span><br>app.listen(<span class="hljs-number">8088</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;express server running at http://127.0.0.1:8088&#x27;</span>)<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h4 id="通过req-params-对象，可以访问到-url-中通过-匹配-到的动态参数"><a href="#通过req-params-对象，可以访问到-url-中通过-匹配-到的动态参数" class="headerlink" title="通过req.params 对象，可以访问到 url 中通过 : 匹配 到的动态参数"></a>通过req.params 对象，可以访问到 url 中通过 : 匹配 到的动态参数</h4></li>
+<li>注意： 默认情况下，req.params是一个空对象{},里面存放这通过 : 动态匹配到参数值<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 浏览器输入 http://127.0.0.1:8088/user/1</span><br><span class="hljs-comment"> * 页面显示：&#123;&quot;id&quot;:&quot;1&quot;&#125;</span><br><span class="hljs-comment"> * **/</span><br><span class="hljs-comment">// 1.导入 Express</span><br><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>)<br><span class="hljs-comment">// 2. 创建web服务器</span><br><span class="hljs-keyword">const</span> app = express()<br><span class="hljs-comment">//获取通过 : 动态匹配到参数值</span><br><span class="hljs-comment">// :id是一个动态的参数,也可以访问多个 /user/:id/:name</span><br>app.get(<span class="hljs-string">&#x27;/user/:id&#x27;</span>,<span class="hljs-function">(<span class="hljs-params">req,res</span>)=&gt;</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(req.params)<br>    <span class="hljs-comment">//注意： 默认情况下，req.params是一个空对象&#123;&#125;,里面存放这通过 : 动态匹配到参数值</span><br>    res.send(req.params)<br>&#125;)<br><span class="hljs-comment">// 3. 调用app.listen(端口号，启动成功的回调函数) 启动web服务器</span><br>app.listen(<span class="hljs-number">8088</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;express server running at http://127.0.0.1:8088&#x27;</span>)<br>&#125;)<br><br></code></pre></td></tr></table></figure></li>
+</ul>
+
       </section>
 
       
       
+        <nav class="article-nav">
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2022/08/09/Node%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%80%EF%BC%89/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Node知识整理（一）</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
 
-      
-      
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+    <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
+      <div id="valine_thread" class="valine-thread"></div>
+    </div>
+    <script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+        el: "#valine_thread",
+        appId: "lShUpkvoSbjHVxChWwnLHlFP-gzGzoHsz",
+        appKey: "27Sx0NOFSDgm5ENq991FYUk6",
+        avatar: "mm",
+        placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+        notify: false,
+        visitor: false,
+        pageSize: 10,
+      });
+    </script>
+  
+
+  
+  
+
+
+      </section>
     </div>
     <div class="widget-info">
       <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -162,6 +259,20 @@
     </div>
   </div>
 </section>
+
+      
+<section class="widget-toc widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-toc" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M134.50666666 767.46666668H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.23999999v50.13333333c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H134.50666666c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.13333333c0.10666668-27.73333333 22.50666668-50.24000001 50.24000001-50.24000001zM84.37333332 541.65333333h326.18666669c27.73333333 0 50.24000001 22.39999999 50.23999999 50.13333334v50.24000001c0 27.73333333-22.50666668 50.24000001-50.24000002 50.23999999H84.37333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.23999999v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333334zM134.50666666 315.83999999H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.24000001v50.24000001c0 27.73333333-22.50666668 50.13333334-50.24000001 50.13333333H134.50666666c-27.73333333 0-50.24000001-22.39999999-50.23999999-50.13333333v-50.24000001c0.10666668-27.84000001 22.50666668-50.24000001 50.24000001-50.23999999zM209.81333332 89.91999999h326.18666671c27.73333333 0 50.24000001 22.39999999 50.23999997 50.13333335v50.23999999c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H209.81333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333333zM692.05333333 623.36l274.66666669 176.00000002c23.36000001 14.93333333 30.08 45.97333334 15.14666666 69.33333332L954.77333334 910.93333333c-14.93333333 23.25333334-45.97333334 30.08-69.33333335 15.14666667l-274.66666666-176c-23.36000001-14.93333333-30.08-45.97333334-15.14666667-69.33333333l27.09333334-42.24000001c14.93333333-23.36000001 46.08000001-30.08 69.33333333-15.14666666z" fill="currentColor"></path>
+</svg>
+    <span>TOC</span>
+  </div>
+  <div class="widget-body">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97"><span class="toc-number">1.</span> <span class="toc-text">模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6"><span class="toc-number">1.1.</span> <span class="toc-text">模块的加载机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Express"><span class="toc-number">2.</span> <span class="toc-text">Express</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Express-%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F%EF%BC%9F"><span class="toc-number">2.1.</span> <span class="toc-text">Express 能做什么？？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.2.</span> <span class="toc-text">创建基本的服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%91%E5%90%AC-GET-%E8%AF%B7%E6%B1%82-%E5%92%8C-POST-%E8%AF%B7%E6%B1%82"><span class="toc-number">2.3.</span> <span class="toc-text">监听 GET 请求 和  POST 请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96url-%E4%B8%AD%E4%BC%A0%E9%80%92%E7%9A%84%E5%8F%82%E6%95%B0%E5%91%A2%EF%BC%9F"><span class="toc-number">2.4.</span> <span class="toc-text">如何获取url 中传递的参数呢？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87req-query-%E5%AF%B9%E8%B1%A1%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%E5%88%B0%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%80%9A%E8%BF%87%E6%9F%A5%E8%AF%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%BD%A2%E5%BC%8F%EF%BC%8C%E5%8F%91%E9%80%81%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%88%B0%E5%8F%82%E6%95%B0"><span class="toc-number">2.4.1.</span> <span class="toc-text">通过req.query 对象可以访问到客户端通过查询字符串的形式，发送到服务器到参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87req-params-%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%E5%88%B0-url-%E4%B8%AD%E9%80%9A%E8%BF%87-%E5%8C%B9%E9%85%8D-%E5%88%B0%E7%9A%84%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0"><span class="toc-number">2.4.2.</span> <span class="toc-text">通过req.params 对象，可以访问到 url 中通过 : 匹配 到的动态参数</span></a></li></ol></li></ol></li></ol>
+  </div>
+</section>
+
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -267,7 +378,6 @@
     </div>
   </article>
 </div>
-
 
     <!-- footer container -->
 <footer id="footer" class="footer">

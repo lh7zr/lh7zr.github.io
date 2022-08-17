@@ -23,7 +23,7 @@
 
   
 
-  <title>Node知识整理（持续更新） | 霖霏晗的blog</title>
+  <title>Node知识整理（一） | 霖霏晗的blog</title>
 
   
 
@@ -99,7 +99,7 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">Node知识整理（持续更新）</h1>
+          <h1 class="title-wrap">Node知识整理（一）</h1>
           <h2 class="title-sub-wrap">
             <strong>霖霏晗</strong>
             <span>发布于</span>
@@ -177,7 +177,7 @@
 <li>package.json 用来记录与项目有关的配置信息<h3 id="快速创建-package-json"><a href="#快速创建-package-json" class="headerlink" title="快速创建 package.json"></a>快速创建 package.json</h3></li>
 <li>命令： npm init -y</li>
 <li>注意：<strong>此命令只能在英文的目录下成功运行</strong>，所以<strong>项目文件夹名称不能是中文，不能用空格</strong><h3 id="如何安装指定版本的包呢？"><a href="#如何安装指定版本的包呢？" class="headerlink" title="如何安装指定版本的包呢？"></a>如何安装指定版本的包呢？</h3></li>
-<li>如果需要安装指定版本的包，可以在包名字之后通过 <strong>@符号</strong> 指定具体的版本，例如 npm i <a href="mailto:&#109;&#111;&#x6d;&#x65;&#110;&#x74;&#x40;&#50;&#46;&#50;&#x39;&#46;&#52;">&#109;&#111;&#x6d;&#x65;&#110;&#x74;&#x40;&#50;&#46;&#50;&#x39;&#46;&#52;</a></li>
+<li>如果需要安装指定版本的包，可以在包名字之后通过 <strong>@符号</strong> 指定具体的版本，例如 npm i <a href="mailto:&#x6d;&#111;&#x6d;&#101;&#110;&#116;&#64;&#x32;&#46;&#50;&#57;&#46;&#52;">&#x6d;&#111;&#x6d;&#101;&#110;&#116;&#64;&#x32;&#46;&#50;&#57;&#46;&#52;</a></li>
 <li>包的语义化版本 例如2.29.4 第一位数字：大版本，第二位数字：功能版本，第三位数字：bug修复版本</li>
 <li><strong>版本号提升的规则</strong>：只要前面的版本号增长了，后面的版本号<strong>归零</strong><h3 id="npm一次性安装所有的包"><a href="#npm一次性安装所有的包" class="headerlink" title="npm一次性安装所有的包"></a>npm一次性安装所有的包</h3></li>
 <li>npm install (npm i)<h3 id="npm-卸载包"><a href="#npm-卸载包" class="headerlink" title="npm 卸载包"></a>npm 卸载包</h3></li>
@@ -190,7 +190,13 @@
 <li>将下包的镜像设置为淘宝镜像： npm config set registry <a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a><h3 id="规范的包结构"><a href="#规范的包结构" class="headerlink" title="规范的包结构"></a>规范的包结构</h3></li>
 <li>必须以单独的文件存在</li>
 <li>包的顶级目录下面必须包含package.json 配置文件</li>
-<li>package.json 文件必须包括 name ,version, main 三个属性 分别代表包的名字。版本号，包的入口<h2 id="nrm-工具"><a href="#nrm-工具" class="headerlink" title="nrm 工具"></a>nrm 工具</h2></li>
+<li>package.json 文件必须包括 name ,version, main 三个属性 分别代表包的名字。版本号，包的入口<h3 id="发布npm包"><a href="#发布npm包" class="headerlink" title="发布npm包"></a>发布npm包</h3></li>
+<li>npm publish (注意：此命名在发布包的目录下)<h3 id="删除已发布的包"><a href="#删除已发布的包" class="headerlink" title="删除已发布的包"></a>删除已发布的包</h3></li>
+<li>命令：<strong>npm unpublish 包名  –force</strong> 即可删除npm发布的包</li>
+<li>注意：<blockquote>
+<p>npm unpublish命令只能删除72小时以内发布的包<br>npm unpublish 删除的包在24小时内不能重复发布<br>尽量不要往npm发布无用包</p>
+</blockquote>
+<h2 id="nrm-工具"><a href="#nrm-工具" class="headerlink" title="nrm 工具"></a>nrm 工具</h2></li>
 <li>安装nrm 工具： npm i nrm  -g</li>
 <li>查看所有可用的镜像源： nrm ls</li>
 <li>切换镜像 例如切换为淘宝镜像：nrm use taobao</li>
@@ -201,6 +207,20 @@
       
       
         <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2022/08/09/Node%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86%EF%BC%88%E4%BA%8C%EF%BC%89/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Node知识整理（二）</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
           
           
             <div class="article-nav-item layout-padding">
@@ -269,7 +289,7 @@
         <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
 </svg>
-        <span>19</span>
+        <span>20</span>
       </div>
       <div class="count-box--item">
         <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -296,7 +316,7 @@
     <span>TOC</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8readFile%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">使用readFile读取文件内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8writeFile%E6%96%B9%E6%B3%95%E5%90%91%E6%8C%87%E5%AE%9A%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%AD%E6%8F%92%E5%85%A5%E5%86%85%E5%AE%B9"><span class="toc-number">2.</span> <span class="toc-text">使用writeFile方法向指定的文件中插入内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">路径问题处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E2%80%94"><span class="toc-number">3.1.</span> <span class="toc-text">问题—-</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">3.2.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#path-join-%E6%96%B9%E6%B3%95-path-basename-%E6%96%B9%E6%B3%95-path-extname-%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">path.join()方法,path.basename()方法,path.extname()方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#path-join-%E6%8B%BC%E6%8E%A5%E8%B7%AF%E5%BE%84"><span class="toc-number">4.1.</span> <span class="toc-text">path.join():拼接路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#path-basename-%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%90%8D%E7%A7%B0"><span class="toc-number">4.2.</span> <span class="toc-text">path.basename():获取文件名称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#path-extname-%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80%E5%90%8D"><span class="toc-number">4.3.</span> <span class="toc-text">path.extname():获取文件后缀名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAweb%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">创建web服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%86%E8%A7%A3http%E4%B8%ADreq%E8%AF%B7%E6%B1%82%E5%AF%B9%E8%B1%A1%E5%92%8Cres%E5%93%8D%E5%BA%94"><span class="toc-number">6.</span> <span class="toc-text">了解http中req请求对象和res响应</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3http%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98"><span class="toc-number">7.</span> <span class="toc-text">解决http中文乱码问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E4%B8%8D%E5%90%8C%E7%9A%84url%E5%93%8D%E5%BA%94%E4%B8%8D%E5%90%8C%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-number">8.</span> <span class="toc-text">根据不同的url响应不同的内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#node%E6%A8%A1%E5%9D%97%E5%88%86%E4%B8%BA%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97%EF%BC%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%EF%BC%8C%E5%92%8C%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97"><span class="toc-number">9.</span> <span class="toc-text">node模块分为内置模块，自定义模块，和第三方模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">10.</span> <span class="toc-text">模块块级作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E5%A4%96%E5%85%B1%E4%BA%AB%E6%A8%A1%E5%9D%97%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E6%88%90%E5%91%98"><span class="toc-number">11.</span> <span class="toc-text">向外共享模块作用域的成员</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#module%E5%AF%B9%E8%B1%A1"><span class="toc-number">11.1.</span> <span class="toc-text">module对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#module-exports-%E5%AF%B9%E8%B1%A1-exports%E5%AF%B9%E8%B1%A1"><span class="toc-number">11.2.</span> <span class="toc-text">module.exports 对象(exports对象)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nodejs%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9D%97%E5%8C%96%E8%A7%84%E8%8C%83%EF%BC%88nodejs%E9%81%B5%E5%BE%AA%E4%BA%86CommonJS%E8%A7%84%E8%8C%83%EF%BC%89"><span class="toc-number">11.3.</span> <span class="toc-text">nodejs中的模块化规范（nodejs遵循了CommonJS规范）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm%E5%8C%85"><span class="toc-number">12.</span> <span class="toc-text">npm包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#npm-%E5%88%9D%E6%AC%A1%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E6%96%87%E4%BB%B6%E5%91%A2"><span class="toc-number">12.1.</span> <span class="toc-text">npm 初次安装包多了哪些文件呢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm%E5%8C%85%E7%AE%A1%E7%90%86%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%88package-json%EF%BC%89"><span class="toc-number">12.2.</span> <span class="toc-text">npm包管理配置文件（package.json）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA-package-json"><span class="toc-number">12.3.</span> <span class="toc-text">快速创建 package.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%85%E5%91%A2%EF%BC%9F"><span class="toc-number">12.4.</span> <span class="toc-text">如何安装指定版本的包呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm%E4%B8%80%E6%AC%A1%E6%80%A7%E5%AE%89%E8%A3%85%E6%89%80%E6%9C%89%E7%9A%84%E5%8C%85"><span class="toc-number">12.5.</span> <span class="toc-text">npm一次性安装所有的包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm-%E5%8D%B8%E8%BD%BD%E5%8C%85"><span class="toc-number">12.6.</span> <span class="toc-text">npm 卸载包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%85%A8%E5%B1%80%E5%8C%85"><span class="toc-number">12.7.</span> <span class="toc-text">安装全局包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%B8%E8%BD%BD%E5%85%A8%E5%B1%80%E5%8C%85"><span class="toc-number">12.8.</span> <span class="toc-text">卸载全局包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E4%B8%8B%E8%BD%BD%E5%8C%85%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">12.9.</span> <span class="toc-text">解决下载包慢的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E8%8C%83%E7%9A%84%E5%8C%85%E7%BB%93%E6%9E%84"><span class="toc-number">12.10.</span> <span class="toc-text">规范的包结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nrm-%E5%B7%A5%E5%85%B7"><span class="toc-number">13.</span> <span class="toc-text">nrm 工具</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8readFile%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">使用readFile读取文件内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8writeFile%E6%96%B9%E6%B3%95%E5%90%91%E6%8C%87%E5%AE%9A%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%AD%E6%8F%92%E5%85%A5%E5%86%85%E5%AE%B9"><span class="toc-number">2.</span> <span class="toc-text">使用writeFile方法向指定的文件中插入内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">路径问题处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E2%80%94"><span class="toc-number">3.1.</span> <span class="toc-text">问题—-</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">3.2.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#path-join-%E6%96%B9%E6%B3%95-path-basename-%E6%96%B9%E6%B3%95-path-extname-%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">path.join()方法,path.basename()方法,path.extname()方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#path-join-%E6%8B%BC%E6%8E%A5%E8%B7%AF%E5%BE%84"><span class="toc-number">4.1.</span> <span class="toc-text">path.join():拼接路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#path-basename-%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%90%8D%E7%A7%B0"><span class="toc-number">4.2.</span> <span class="toc-text">path.basename():获取文件名称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#path-extname-%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80%E5%90%8D"><span class="toc-number">4.3.</span> <span class="toc-text">path.extname():获取文件后缀名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAweb%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">创建web服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%86%E8%A7%A3http%E4%B8%ADreq%E8%AF%B7%E6%B1%82%E5%AF%B9%E8%B1%A1%E5%92%8Cres%E5%93%8D%E5%BA%94"><span class="toc-number">6.</span> <span class="toc-text">了解http中req请求对象和res响应</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3http%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98"><span class="toc-number">7.</span> <span class="toc-text">解决http中文乱码问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E4%B8%8D%E5%90%8C%E7%9A%84url%E5%93%8D%E5%BA%94%E4%B8%8D%E5%90%8C%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-number">8.</span> <span class="toc-text">根据不同的url响应不同的内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#node%E6%A8%A1%E5%9D%97%E5%88%86%E4%B8%BA%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97%EF%BC%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%EF%BC%8C%E5%92%8C%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97"><span class="toc-number">9.</span> <span class="toc-text">node模块分为内置模块，自定义模块，和第三方模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">10.</span> <span class="toc-text">模块块级作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E5%A4%96%E5%85%B1%E4%BA%AB%E6%A8%A1%E5%9D%97%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E6%88%90%E5%91%98"><span class="toc-number">11.</span> <span class="toc-text">向外共享模块作用域的成员</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#module%E5%AF%B9%E8%B1%A1"><span class="toc-number">11.1.</span> <span class="toc-text">module对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#module-exports-%E5%AF%B9%E8%B1%A1-exports%E5%AF%B9%E8%B1%A1"><span class="toc-number">11.2.</span> <span class="toc-text">module.exports 对象(exports对象)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nodejs%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9D%97%E5%8C%96%E8%A7%84%E8%8C%83%EF%BC%88nodejs%E9%81%B5%E5%BE%AA%E4%BA%86CommonJS%E8%A7%84%E8%8C%83%EF%BC%89"><span class="toc-number">11.3.</span> <span class="toc-text">nodejs中的模块化规范（nodejs遵循了CommonJS规范）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm%E5%8C%85"><span class="toc-number">12.</span> <span class="toc-text">npm包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#npm-%E5%88%9D%E6%AC%A1%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E6%96%87%E4%BB%B6%E5%91%A2"><span class="toc-number">12.1.</span> <span class="toc-text">npm 初次安装包多了哪些文件呢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm%E5%8C%85%E7%AE%A1%E7%90%86%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%88package-json%EF%BC%89"><span class="toc-number">12.2.</span> <span class="toc-text">npm包管理配置文件（package.json）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA-package-json"><span class="toc-number">12.3.</span> <span class="toc-text">快速创建 package.json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%85%E5%91%A2%EF%BC%9F"><span class="toc-number">12.4.</span> <span class="toc-text">如何安装指定版本的包呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm%E4%B8%80%E6%AC%A1%E6%80%A7%E5%AE%89%E8%A3%85%E6%89%80%E6%9C%89%E7%9A%84%E5%8C%85"><span class="toc-number">12.5.</span> <span class="toc-text">npm一次性安装所有的包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm-%E5%8D%B8%E8%BD%BD%E5%8C%85"><span class="toc-number">12.6.</span> <span class="toc-text">npm 卸载包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%85%A8%E5%B1%80%E5%8C%85"><span class="toc-number">12.7.</span> <span class="toc-text">安装全局包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%B8%E8%BD%BD%E5%85%A8%E5%B1%80%E5%8C%85"><span class="toc-number">12.8.</span> <span class="toc-text">卸载全局包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E4%B8%8B%E8%BD%BD%E5%8C%85%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">12.9.</span> <span class="toc-text">解决下载包慢的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E8%8C%83%E7%9A%84%E5%8C%85%E7%BB%93%E6%9E%84"><span class="toc-number">12.10.</span> <span class="toc-text">规范的包结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B8%83npm%E5%8C%85"><span class="toc-number">12.11.</span> <span class="toc-text">发布npm包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%B7%B2%E5%8F%91%E5%B8%83%E7%9A%84%E5%8C%85"><span class="toc-number">12.12.</span> <span class="toc-text">删除已发布的包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nrm-%E5%B7%A5%E5%85%B7"><span class="toc-number">13.</span> <span class="toc-text">nrm 工具</span></a></li></ol>
   </div>
 </section>
 
@@ -332,14 +352,20 @@
         </li>
       
         <li class="categorys-list-item">
+          <a href="/categories/NODE/">
+            NODE (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
           <a href="/categories/PS/">
             PS (2)
           </a>
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/NODE/">
-            NODE (1)
+          <a href="/categories/JS/">
+            JS (2)
           </a>
         </li>
       
@@ -356,18 +382,6 @@
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/elementUI/">
-            elementUI (1)
-          </a>
-        </li>
-      
-        <li class="categorys-list-item">
-          <a href="/categories/JS/">
-            JS (2)
-          </a>
-        </li>
-      
-        <li class="categorys-list-item">
           <a href="/categories/CSS/H5/">
             H5 (1)
           </a>
@@ -376,6 +390,12 @@
         <li class="categorys-list-item">
           <a href="/categories/VUE/">
             VUE (4)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/elementUI/">
+            elementUI (1)
           </a>
         </li>
       
@@ -398,7 +418,7 @@
   </div>
   <div class="widget-body">
     <div class="tags-cloud">
-      <a href="/tags/CSS/" style="font-size: 10px;" class="tags-cloud-0">CSS</a> <a href="/tags/H5/" style="font-size: 10px;" class="tags-cloud-0">H5</a> <a href="/tags/HTML/" style="font-size: 10px;" class="tags-cloud-0">HTML</a> <a href="/tags/JS/" style="font-size: 10px;" class="tags-cloud-0">JS</a> <a href="/tags/NODE/" style="font-size: 10px;" class="tags-cloud-0">NODE</a> <a href="/tags/PS/" style="font-size: 13.33px;" class="tags-cloud-3">PS</a> <a href="/tags/elementUI/" style="font-size: 10px;" class="tags-cloud-0">elementUI</a> <a href="/tags/git/" style="font-size: 10px;" class="tags-cloud-0">git</a> <a href="/tags/h5/" style="font-size: 10px;" class="tags-cloud-0">h5</a> <a href="/tags/javascript/" style="font-size: 10px;" class="tags-cloud-0">javascript</a> <a href="/tags/js/" style="font-size: 16.67px;" class="tags-cloud-7">js</a> <a href="/tags/localStorage/" style="font-size: 10px;" class="tags-cloud-0">localStorage</a> <a href="/tags/mac/" style="font-size: 10px;" class="tags-cloud-0">mac</a> <a href="/tags/sessionStorage/" style="font-size: 10px;" class="tags-cloud-0">sessionStorage</a> <a href="/tags/vue/" style="font-size: 20px;" class="tags-cloud-10">vue</a>
+      <a href="/tags/CSS/" style="font-size: 10px;" class="tags-cloud-0">CSS</a> <a href="/tags/H5/" style="font-size: 10px;" class="tags-cloud-0">H5</a> <a href="/tags/HTML/" style="font-size: 10px;" class="tags-cloud-0">HTML</a> <a href="/tags/JS/" style="font-size: 10px;" class="tags-cloud-0">JS</a> <a href="/tags/NODE/" style="font-size: 13.33px;" class="tags-cloud-3">NODE</a> <a href="/tags/PS/" style="font-size: 13.33px;" class="tags-cloud-3">PS</a> <a href="/tags/elementUI/" style="font-size: 10px;" class="tags-cloud-0">elementUI</a> <a href="/tags/git/" style="font-size: 10px;" class="tags-cloud-0">git</a> <a href="/tags/h5/" style="font-size: 10px;" class="tags-cloud-0">h5</a> <a href="/tags/javascript/" style="font-size: 10px;" class="tags-cloud-0">javascript</a> <a href="/tags/js/" style="font-size: 16.67px;" class="tags-cloud-7">js</a> <a href="/tags/localStorage/" style="font-size: 10px;" class="tags-cloud-0">localStorage</a> <a href="/tags/mac/" style="font-size: 10px;" class="tags-cloud-0">mac</a> <a href="/tags/sessionStorage/" style="font-size: 10px;" class="tags-cloud-0">sessionStorage</a> <a href="/tags/vue/" style="font-size: 20px;" class="tags-cloud-10">vue</a>
     </div>
   </div>
 </section>
