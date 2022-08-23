@@ -148,7 +148,33 @@
 <li>实际项目开发是，每个项目对应一个<strong>独立的数据库</strong></li>
 <li>不同的数据存在不同的表中</li>
 <li>每个表中存储哪些信息是有字段决定的</li>
-<li>表中的行，代表每一条具体的数据</li>
+<li>表中的行，代表每一条具体的数据<h3 id="SQL-的-select-语句-（查询）"><a href="#SQL-的-select-语句-（查询）" class="headerlink" title="SQL 的 select 语句 （查询）"></a>SQL 的 select 语句 （查询）</h3></li>
+<li>SELECT * FROM 表名称 [ 从from指定的表中查询所有的数据 ]</li>
+<li>SELECT 列名称 FROM 表名称 [ 从from指定的表中查询指定列名称（字段）的数据]</li>
+<li>SELECT 列名称1, 列名称2 FROM 表名称 [多个列名称之间用逗号分隔开]<h3 id="SQL-的-insert-into-语句-（向数据表中插入新的数据）"><a href="#SQL-的-insert-into-语句-（向数据表中插入新的数据）" class="headerlink" title="SQL 的 insert into 语句 （向数据表中插入新的数据）"></a>SQL 的 insert into 语句 （向数据表中插入新的数据）</h3></li>
+<li>insert into 表名称 (列名称1，列名称2) values (值1，值2)    [注意: 列和值一一对应]<h3 id="SQL-的-update-语法-（更新）"><a href="#SQL-的-update-语法-（更新）" class="headerlink" title="SQL 的 update 语法 （更新）"></a>SQL 的 update 语法 （更新）</h3></li>
+<li>update 表名 set 列名 = 新值 where 筛选条件  [更新表中某一行的某一列]</li>
+<li>update 表名 set 列名1 = 新值1,列名2 = 新值2 where 筛选条件  [更新表中某一行的多列]<h3 id="SQL-的-delete-语句（删除）"><a href="#SQL-的-delete-语句（删除）" class="headerlink" title="SQL 的 delete 语句（删除）"></a>SQL 的 delete 语句（删除）</h3></li>
+<li>delete from 表名  where 列名称 = 值<h3 id="SQL-的-where-子句"><a href="#SQL-的-where-子句" class="headerlink" title="SQL 的 where 子句"></a>SQL 的 where 子句</h3></li>
+<li>where 子句用于限定选择的标准。 在select，update delete 语句中皆可使用</li>
+<li>查询语句中的where 条件: <strong>select 列名称 from 表名 where 列名称  运算符 值</strong>  </li>
+<li>更新语句中的where 条件: <strong>update 表名称 set 列名称= 新值  where 列名称  运算符 值</strong></li>
+<li>删除语句中的where 条件: <strong>delete from 表名  where 列名称 运算符 值</strong></li>
+<li>以上查询，更新，删除语句中的运算符 等号(=),不等于（&lt;&gt;,!=）, 大于（&gt;）,小于（&lt;）,大于等于（ &gt;= ）, 小于等于(&lt;=)<h3 id="SQL-的-and-和-or-运算符"><a href="#SQL-的-and-和-or-运算符" class="headerlink" title="SQL 的 and 和 or 运算符"></a>SQL 的 and 和 or 运算符</h3></li>
+<li>select * from 表名 where 列名 = 值 and  列名2= 值2</li>
+<li>select * from 表名 where 列名 = 值 or  列名2= 值2<h3 id="SQL-的-order-by-语句"><a href="#SQL-的-order-by-语句" class="headerlink" title="SQL 的 order by 语句"></a>SQL 的 order by 语句</h3></li>
+<li>根据指定的列对结果进行排序</li>
+<li>order by 语句默认按照升序对记录进行排序 </li>
+<li>如果按照降序对记录进行排序，可以使用 desc 关键字，asc表示升序可以不写</li>
+<li>例子如下：<br>select * from user order by status<br>select * from user order by id desc<h3 id="SQL-的-order-by-语句-多重排序"><a href="#SQL-的-order-by-语句-多重排序" class="headerlink" title="SQL 的 order by 语句 多重排序"></a>SQL 的 order by 语句 多重排序</h3></li>
+<li>select * from user order by name desc, id asc<h3 id="SQL-的-count-函数"><a href="#SQL-的-count-函数" class="headerlink" title="SQL 的 count(*) 函数"></a>SQL 的 count(*) 函数</h3></li>
+<li>count(*)函数用于返回查询接口总数据条数，</li>
+<li>select count(*) from 表名</li>
+<li>select count(*) from 表名 where 列名 = 值<h4 id="使用-as-为列设置别名（给查询出来对列名称设置别名）"><a href="#使用-as-为列设置别名（给查询出来对列名称设置别名）" class="headerlink" title="使用 as 为列设置别名（给查询出来对列名称设置别名）"></a>使用 as 为列设置别名（给查询出来对列名称设置别名）</h4></li>
+<li>select count(*) as 新列名 from 表名 where 列名 = 值<h3 id="安装配置mysql-模块"><a href="#安装配置mysql-模块" class="headerlink" title="安装配置mysql 模块"></a>安装配置mysql 模块</h3></li>
+<li>命令： npm install mysql<h4 id="配置mysql"><a href="#配置mysql" class="headerlink" title="配置mysql"></a>配置mysql</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * mysql配置</span><br><span class="hljs-comment"> */</span><br><span class="hljs-comment">// 1. 导入mysql 模块</span><br><span class="hljs-keyword">const</span> mysql = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;mysql&#x27;</span>)<br><span class="hljs-comment">// 2. 建立与 mysql 数据库的连接关系</span><br>  <span class="hljs-keyword">const</span> db =mysql.createPool(&#123;<br>      <span class="hljs-attr">host</span>:<span class="hljs-string">&#x27;127.0.0.1&#x27;</span>, <span class="hljs-comment">//数据库的IP地址</span><br>      <span class="hljs-attr">user</span>:<span class="hljs-string">&#x27;root&#x27;</span>, <span class="hljs-comment">//登录名</span><br>      <span class="hljs-attr">password</span>:<span class="hljs-string">&#x27;admin123&#x27;</span>, <span class="hljs-comment">//登录数据库的密码</span><br>      <span class="hljs-attr">database</span>:<span class="hljs-string">&#x27;my_db_01&#x27;</span>, <span class="hljs-comment">//指定要操作的数据库名称</span><br>  &#125;)<br></code></pre></td></tr></table></figure>
+<h4 id="检测mysql模块是否能正常运行"><a href="#检测mysql模块是否能正常运行" class="headerlink" title="检测mysql模块是否能正常运行"></a>检测mysql模块是否能正常运行</h4></li>
+<li>通过db.query() 函数 指定要执行的sql语句，通过回调函数拿到执行的结果</li>
 </ul>
 
       </section>
@@ -251,7 +277,7 @@
     <span>TOC</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.</span> <span class="toc-text">数据库的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9F"><span class="toc-number">2.1.</span> <span class="toc-text">什么是数据库？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%8A%E5%88%86%E7%B1%BB"><span class="toc-number">2.2.</span> <span class="toc-text">常见的数据库及分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.2.1.</span> <span class="toc-text">数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">2.2.2.</span> <span class="toc-text">分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84%EF%BC%88%E5%BA%93%EF%BC%8C%E8%A1%A8%EF%BC%8C%E8%A1%8C%EF%BC%8C%E5%AD%97%E6%AE%B5%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%89"><span class="toc-number">2.2.3.</span> <span class="toc-text">数据组织结构（库，表，行，字段之间的关系）</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.</span> <span class="toc-text">数据库的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9F"><span class="toc-number">2.1.</span> <span class="toc-text">什么是数据库？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%8A%E5%88%86%E7%B1%BB"><span class="toc-number">2.2.</span> <span class="toc-text">常见的数据库及分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">2.2.1.</span> <span class="toc-text">数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">2.2.2.</span> <span class="toc-text">分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84%EF%BC%88%E5%BA%93%EF%BC%8C%E8%A1%A8%EF%BC%8C%E8%A1%8C%EF%BC%8C%E5%AD%97%E6%AE%B5%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%89"><span class="toc-number">2.2.3.</span> <span class="toc-text">数据组织结构（库，表，行，字段之间的关系）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-%E7%9A%84-select-%E8%AF%AD%E5%8F%A5-%EF%BC%88%E6%9F%A5%E8%AF%A2%EF%BC%89"><span class="toc-number">2.2.4.</span> <span class="toc-text">SQL 的 select 语句 （查询）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-%E7%9A%84-insert-into-%E8%AF%AD%E5%8F%A5-%EF%BC%88%E5%90%91%E6%95%B0%E6%8D%AE%E8%A1%A8%E4%B8%AD%E6%8F%92%E5%85%A5%E6%96%B0%E7%9A%84%E6%95%B0%E6%8D%AE%EF%BC%89"><span class="toc-number">2.2.5.</span> <span class="toc-text">SQL 的 insert into 语句 （向数据表中插入新的数据）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-%E7%9A%84-update-%E8%AF%AD%E6%B3%95-%EF%BC%88%E6%9B%B4%E6%96%B0%EF%BC%89"><span class="toc-number">2.2.6.</span> <span class="toc-text">SQL 的 update 语法 （更新）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-%E7%9A%84-delete-%E8%AF%AD%E5%8F%A5%EF%BC%88%E5%88%A0%E9%99%A4%EF%BC%89"><span class="toc-number">2.2.7.</span> <span class="toc-text">SQL 的 delete 语句（删除）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-%E7%9A%84-where-%E5%AD%90%E5%8F%A5"><span class="toc-number">2.2.8.</span> <span class="toc-text">SQL 的 where 子句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-%E7%9A%84-and-%E5%92%8C-or-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.2.9.</span> <span class="toc-text">SQL 的 and 和 or 运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-%E7%9A%84-order-by-%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.2.10.</span> <span class="toc-text">SQL 的 order by 语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-%E7%9A%84-order-by-%E8%AF%AD%E5%8F%A5-%E5%A4%9A%E9%87%8D%E6%8E%92%E5%BA%8F"><span class="toc-number">2.2.11.</span> <span class="toc-text">SQL 的 order by 语句 多重排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-%E7%9A%84-count-%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.12.</span> <span class="toc-text">SQL 的 count(*) 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-as-%E4%B8%BA%E5%88%97%E8%AE%BE%E7%BD%AE%E5%88%AB%E5%90%8D%EF%BC%88%E7%BB%99%E6%9F%A5%E8%AF%A2%E5%87%BA%E6%9D%A5%E5%AF%B9%E5%88%97%E5%90%8D%E7%A7%B0%E8%AE%BE%E7%BD%AE%E5%88%AB%E5%90%8D%EF%BC%89"><span class="toc-number">2.2.12.1.</span> <span class="toc-text">使用 as 为列设置别名（给查询出来对列名称设置别名）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEmysql-%E6%A8%A1%E5%9D%97"><span class="toc-number">2.2.13.</span> <span class="toc-text">安装配置mysql 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEmysql"><span class="toc-number">2.2.13.1.</span> <span class="toc-text">配置mysql</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%B5%8Bmysql%E6%A8%A1%E5%9D%97%E6%98%AF%E5%90%A6%E8%83%BD%E6%AD%A3%E5%B8%B8%E8%BF%90%E8%A1%8C"><span class="toc-number">2.2.13.2.</span> <span class="toc-text">检测mysql模块是否能正常运行</span></a></li></ol></li></ol></li></ol></li></ol>
   </div>
 </section>
 
@@ -317,14 +343,14 @@
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/VUE/">
-            VUE (4)
+          <a href="/categories/PS/photoshop/">
+            photoshop (2)
           </a>
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/PS/photoshop/">
-            photoshop (2)
+          <a href="/categories/VUE/">
+            VUE (4)
           </a>
         </li>
       
