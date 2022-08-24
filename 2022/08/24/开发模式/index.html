@@ -23,7 +23,7 @@
 
   
 
-  <title>git常用命令(持续更新。。。) | 霖霏晗的blog</title>
+  <title>开发模式 | 霖霏晗的blog</title>
 
   
 
@@ -46,7 +46,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://linmuhan.gitee.io/links/Asset/home.jpg)"></div>
+    <div class="post-image" style="background-image: url(https://linmuhan.gitee.io/links/Asset/menu10.jpg)"></div>
   
 
   <!-- navbar -->
@@ -99,18 +99,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">git常用命令(持续更新。。。)</h1>
+          <h1 class="title-wrap">开发模式</h1>
           <h2 class="title-sub-wrap">
             <strong>霖霏晗</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2021-10-28T02:02:26.000Z" itemprop="datePublished">2021-10-28</time>
+            <time  class="article-date" datetime="2022-08-23T16:00:00.000Z" itemprop="datePublished">2022-08-24</time>
           </h2>
           <ul class="wrap-list dark">
+  
+    <li><a href="/categories/Node-js/">📒 Node.js</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/git/">🏷️ git</a></li>
+    <li><a href="/tags/Node-js/">🏷️ Node.js</a></li>
   
 </ul>
         </div>
@@ -134,70 +136,34 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <ul>
-<li>git init ：初始化</li>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>本编博客介绍了web开发模式。身份认证，Cookie</li>
 </ul>
-<hr>
-<ul>
-<li>git add . - 添加文件到暂存区</li>
+<h2 id="web开发模式"><a href="#web开发模式" class="headerlink" title="web开发模式"></a>web开发模式</h2><h3 id="服务端渲染端web传统开发模式"><a href="#服务端渲染端web传统开发模式" class="headerlink" title="服务端渲染端web传统开发模式"></a>服务端渲染端web传统开发模式</h3><ul>
+<li>概念： 服务端渲染端概念，服务器发送给客户端的html页面，是在服务器通过字符串的拼接，动态生成的，因此客户端不需要使用ajax这样的技术额外请求页面数据</li>
+<li>优点：前端耗时少，利于SE0</li>
+<li>缺点：占用服务端资源，不利于前后端分离，开发效率低<h3 id="前后端分离端web开发模式"><a href="#前后端分离端web开发模式" class="headerlink" title="前后端分离端web开发模式"></a>前后端分离端web开发模式</h3><h4 id="前后端分离的优缺点"><a href="#前后端分离的优缺点" class="headerlink" title="前后端分离的优缺点"></a>前后端分离的优缺点</h4></li>
+<li>优点：开发体验好，用户体验好，减轻了服务端的渲染压力</li>
+<li>缺点： 不利于SE0 (利用 vue ,react 提供的SSR技术可以解决seo)<h2 id="什么是身份认证"><a href="#什么是身份认证" class="headerlink" title="什么是身份认证"></a>什么是身份认证</h2></li>
+<li>身份认证又称身份验证，鉴权，是指通过一定的手段，完成对身份认证对确认<h3 id="不同开发模式下对身份认证"><a href="#不同开发模式下对身份认证" class="headerlink" title="不同开发模式下对身份认证"></a>不同开发模式下对身份认证</h3></li>
+<li>服务端渲染推荐使用 session 认证机制</li>
+<li>前后端分离推荐使用JWT认证机制<h2 id="HTTP-的无状态性"><a href="#HTTP-的无状态性" class="headerlink" title="HTTP 的无状态性"></a>HTTP 的无状态性</h2></li>
+<li>http协议的无状态性，指的是客户端<strong>每次的http请求都是独立的</strong>，连续多个请求之间没有直接关系，服务端不会主动保留每次http请求的状态<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2></li>
+<li>cookie 是存储在用户浏览器中一段不超过4kb的字符串 它由一个名称（name）一个值（value） 和 其他几个用于控制cookie 有效期，安全性，使用范围的可选属性组成</li>
+<li>不同域名下的cookie各自独立，<h3 id="cookie的特点"><a href="#cookie的特点" class="headerlink" title="cookie的特点"></a>cookie的特点</h3></li>
+<li>自动发送</li>
+<li>域名独立</li>
+<li>过期时限</li>
+<li>4kb限制<h3 id="cookie在身份认证中的作用"><a href="#cookie在身份认证中的作用" class="headerlink" title="cookie在身份认证中的作用"></a>cookie在身份认证中的作用</h3></li>
+<li>客户端第一次请求服务器的时候，服务器通过响应头的形式，向客户端发送了一个身份认证的cookie，客户端会自动将cookie保存在浏览器中</li>
+<li>随后，当客户端浏览器每次请求服务器的时候，浏览器会自动将身份认证相关的cookie,听过请求头的形式，发送给服务器，服务器即可验明客户端的身份<h3 id="COOKIE不具备安全性"><a href="#COOKIE不具备安全性" class="headerlink" title="COOKIE不具备安全性"></a>COOKIE不具备安全性</h3></li>
+<li>cookie 很容易被伪造<h2 id="session的认证机制"><a href="#session的认证机制" class="headerlink" title="session的认证机制"></a>session的认证机制</h2></li>
+<li><img src="https://linmuhan.gitee.io/images/session.png" alt="avatar"><h2 id="在Express中使用session中间件"><a href="#在Express中使用session中间件" class="headerlink" title="在Express中使用session中间件"></a>在Express中使用session中间件</h2></li>
+<li>安装 express-session 中间件</li>
+<li>在express 项目中，只需要安装express-session 中间件，即可在项目中使用session认证</li>
+<li>命令： npm install express-session<h3 id="配置express-session中间件"><a href="#配置express-session中间件" class="headerlink" title="配置express - session中间件"></a>配置express - session中间件</h3></li>
+<li>express-session 中间件安装成功后，需要通过 app.use() 来注册 session中间件</li>
 </ul>
-<hr>
-<ul>
-<li>git commit -m ‘描述’ 提交描述</li>
-</ul>
-<hr>
-<ul>
-<li>git push  提交</li>
-</ul>
-<hr>
-<ul>
-<li>git pull  拉取代码</li>
-</ul>
-<hr>
-<ul>
-<li>git log 查看提交记录</li>
-</ul>
-<hr>
-<ul>
-<li>git config user.name 查看用户名</li>
-</ul>
-<hr>
-<ul>
-<li>git config user.email 查看邮箱</li>
-</ul>
-<hr>
-<ul>
-<li>git config user.name ‘XXX’：修改当前项目的用户名</li>
-</ul>
-<hr>
-<ul>
-<li>git config user.email ‘XXX’ 修改当前项目的邮箱</li>
-</ul>
-<hr>
-<ul>
-<li>git config  –global user.name ‘xxx’ 全局修改用户名</li>
-</ul>
-<hr>
-<ul>
-<li>git config  –global user.email ‘xxx’全局修改邮箱</li>
-</ul>
-<hr>
-<ul>
-<li>git remote -v 查看远程仓库</li>
-</ul>
-<hr>
-<ul>
-<li>git remote set-url origin xxx  修改设置新的远程仓库地址(xxx是要修改的远程地址)</li>
-</ul>
-<hr>
-<ul>
-<li>git branch 查看本地分支</li>
-</ul>
-<hr>
-<ul>
-<li>git status 查看当前仓库状态</li>
-</ul>
-<hr>
 
       </section>
 
@@ -205,32 +171,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://linmuhan.gitee.io/links/Asset/menu04.jpg"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2021/11/24/vue-config-js%E9%85%8D%E7%BD%AE/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">vue-cli3项目vue.config文件配置</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://linmuhan.gitee.io/links/Asset/menu03.jpg"></div>
-    
     <div class="card-text">
       
-        <a href="/2021/10/27/localStorage%E5%92%8CsessionStorage%E7%94%A8%E6%B3%95/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">localStorage和sessionStorage用法</h2>
+        <a href="/2022/08/21/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">数据库</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -309,6 +257,18 @@
 </section>
 
       
+<section class="widget-toc widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-toc" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M134.50666666 767.46666668H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.23999999v50.13333333c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H134.50666666c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.13333333c0.10666668-27.73333333 22.50666668-50.24000001 50.24000001-50.24000001zM84.37333332 541.65333333h326.18666669c27.73333333 0 50.24000001 22.39999999 50.23999999 50.13333334v50.24000001c0 27.73333333-22.50666668 50.24000001-50.24000002 50.23999999H84.37333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.23999999v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333334zM134.50666666 315.83999999H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.24000001v50.24000001c0 27.73333333-22.50666668 50.13333334-50.24000001 50.13333333H134.50666666c-27.73333333 0-50.24000001-22.39999999-50.23999999-50.13333333v-50.24000001c0.10666668-27.84000001 22.50666668-50.24000001 50.24000001-50.23999999zM209.81333332 89.91999999h326.18666671c27.73333333 0 50.24000001 22.39999999 50.23999997 50.13333335v50.23999999c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H209.81333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333333zM692.05333333 623.36l274.66666669 176.00000002c23.36000001 14.93333333 30.08 45.97333334 15.14666666 69.33333332L954.77333334 910.93333333c-14.93333333 23.25333334-45.97333334 30.08-69.33333335 15.14666667l-274.66666666-176c-23.36000001-14.93333333-30.08-45.97333334-15.14666667-69.33333333l27.09333334-42.24000001c14.93333333-23.36000001 46.08000001-30.08 69.33333333-15.14666666z" fill="currentColor"></path>
+</svg>
+    <span>TOC</span>
+  </div>
+  <div class="widget-body">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">web开发模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93%E7%AB%AFweb%E4%BC%A0%E7%BB%9F%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.1.</span> <span class="toc-text">服务端渲染端web传统开发模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%AB%AFweb%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.2.</span> <span class="toc-text">前后端分离端web开发模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">2.2.1.</span> <span class="toc-text">前后端分离的优缺点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81"><span class="toc-number">3.</span> <span class="toc-text">什么是身份认证</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F%E4%B8%8B%E5%AF%B9%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81"><span class="toc-number">3.1.</span> <span class="toc-text">不同开发模式下对身份认证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-%E7%9A%84%E6%97%A0%E7%8A%B6%E6%80%81%E6%80%A7"><span class="toc-number">4.</span> <span class="toc-text">HTTP 的无状态性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie"><span class="toc-number">5.</span> <span class="toc-text">cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">5.1.</span> <span class="toc-text">cookie的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie%E5%9C%A8%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">5.2.</span> <span class="toc-text">cookie在身份认证中的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#COOKIE%E4%B8%8D%E5%85%B7%E5%A4%87%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-number">5.3.</span> <span class="toc-text">COOKIE不具备安全性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session%E7%9A%84%E8%AE%A4%E8%AF%81%E6%9C%BA%E5%88%B6"><span class="toc-number">6.</span> <span class="toc-text">session的认证机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8Express%E4%B8%AD%E4%BD%BF%E7%94%A8session%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="toc-number">7.</span> <span class="toc-text">在Express中使用session中间件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEexpress-session%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="toc-number">7.1.</span> <span class="toc-text">配置express - session中间件</span></a></li></ol></li></ol>
+  </div>
+</section>
+
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
