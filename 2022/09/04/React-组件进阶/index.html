@@ -23,7 +23,7 @@
 
   
 
-  <title>h5页面样式问题记录( 持续更新 ) | 霖霏晗的blog</title>
+  <title>React(三)-组件进阶 | 霖霏晗的blog</title>
 
   
 
@@ -99,22 +99,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">h5页面样式问题记录( 持续更新 )</h1>
+          <h1 class="title-wrap">React(三)-组件进阶</h1>
           <h2 class="title-sub-wrap">
             <strong>霖霏晗</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-01-11T16:00:00.000Z" itemprop="datePublished">2022-01-12</time>
+            <time  class="article-date" datetime="2022-09-04T13:38:12.000Z" itemprop="datePublished">2022-09-04</time>
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/CSS/">📒 CSS</a></li>
-  
-    <li><a href="/categories/CSS/H5/">📒 H5</a></li>
+    <li><a href="/categories/REACT/">📒 REACT</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/H5/">🏷️ H5</a></li>
+    <li><a href="/tags/REACT/">🏷️ REACT</a></li>
   
 </ul>
         </div>
@@ -138,10 +136,19 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h3 id="移动端开发的过程中，当用户连接某个文字-跳转时候-出现-高亮一块，这样很影响用户体验，我们可以吧颜色设置为透明"><a href="#移动端开发的过程中，当用户连接某个文字-跳转时候-出现-高亮一块，这样很影响用户体验，我们可以吧颜色设置为透明" class="headerlink" title="移动端开发的过程中，当用户连接某个文字 跳转时候 出现 高亮一块，这样很影响用户体验，我们可以吧颜色设置为透明"></a>移动端开发的过程中，当用户连接某个文字 跳转时候 出现 高亮一块，这样很影响用户体验，我们可以吧颜色设置为透明</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">a</span> &#123;<br>    -webkit-tap-highlight-<span class="hljs-attribute">color</span>: transparent;<br>    tap-highlight-<span class="hljs-attribute">color</span>: transparent;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="移动端禁止用户复制"><a href="#移动端禁止用户复制" class="headerlink" title="移动端禁止用户复制"></a>移动端禁止用户复制</h3><h4 id="在添加完这段代码后，在IOS-上会有问题的，这个时候你会发现input-框无法正在输入了内容了；解决这个方法-就是-在css-文件中同时设置一下input-的属性"><a href="#在添加完这段代码后，在IOS-上会有问题的，这个时候你会发现input-框无法正在输入了内容了；解决这个方法-就是-在css-文件中同时设置一下input-的属性" class="headerlink" title="在添加完这段代码后，在IOS 上会有问题的，这个时候你会发现input 框无法正在输入了内容了；解决这个方法 就是 在css 文件中同时设置一下input 的属性"></a>在添加完这段代码后，在IOS 上会有问题的，这个时候你会发现input 框无法正在输入了内容了；解决这个方法 就是 在css 文件中同时设置一下input 的属性</h4><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">* &#123;<br>    -webkit-touch-callout: <span class="hljs-keyword">none</span>; <span class="hljs-comment">/*系统默认菜单被禁用*/</span><br>    -webkit-<span class="hljs-keyword">user</span>-<span class="hljs-keyword">select</span>: <span class="hljs-keyword">none</span>; <span class="hljs-comment">/*webkit浏览器*/</span><br>    -khtml-<span class="hljs-keyword">user</span>-<span class="hljs-keyword">select</span>: <span class="hljs-keyword">none</span>; <span class="hljs-comment">/*早期浏览器*/</span><br>    -moz-<span class="hljs-keyword">user</span>-<span class="hljs-keyword">select</span>: <span class="hljs-keyword">none</span>; <span class="hljs-comment">/*火狐*/</span><br>    -ms-<span class="hljs-keyword">user</span>-<span class="hljs-keyword">select</span>: <span class="hljs-keyword">none</span>; <span class="hljs-comment">/*IE10*/</span><br>    <span class="hljs-keyword">user</span>-<span class="hljs-keyword">select</span>: <span class="hljs-keyword">none</span>;<br>&#125;<br><span class="hljs-keyword">input</span> &#123;<br>    -webkit-<span class="hljs-keyword">user</span>-<span class="hljs-keyword">select</span>: auto; <span class="hljs-comment">/*webkit浏览器*/</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="h5页面禁止缩放"><a href="#h5页面禁止缩放" class="headerlink" title="h5页面禁止缩放"></a>h5页面禁止缩放</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;script&gt;<br>    <span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-comment">// 阻止双击放大</span><br>        <span class="hljs-keyword">var</span> lastTouchEnd = <span class="hljs-number">0</span>;<br>        <span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">&#x27;touchstart&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>&#123;<br>            <span class="hljs-keyword">if</span> (event.touches.length &gt; <span class="hljs-number">1</span>) &#123;<br>                event.preventDefault();<br>            &#125;<br>        &#125;);<br>        <span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">&#x27;touchend&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>&#123;<br>            <span class="hljs-keyword">var</span> now = (<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()).getTime();<br>            <span class="hljs-keyword">if</span> (now - lastTouchEnd &lt;= <span class="hljs-number">300</span>) &#123;<br>                event.preventDefault();<br>            &#125;<br>            lastTouchEnd = now;<br>        &#125;, <span class="hljs-literal">false</span>);<br>        <span class="hljs-comment">// 阻止双指放大</span><br>        <span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">&#x27;gesturestart&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>&#123;<br>            event.preventDefault();<br>        &#125;);<br>    &#125;<span class="hljs-comment">//苹果手机禁止缩放</span><br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>本篇博客主要讲解的React组件之间的关系，哈哈哈<h2 id="组件的props"><a href="#组件的props" class="headerlink" title="组件的props"></a>组件的props</h2></li>
+<li>组件是封闭的，要接收外部数据通过props实现</li>
+<li><strong>props作用：接收传递给组件的数据</strong></li>
+<li>传递数据，给组件标签添加属性</li>
+<li>接收数据：<strong>函数组件通过参数props 接收数据</strong>，<strong>类组件通过this.props接收数据</strong></li>
+<li>函数组件接收参数 props.参数名，代码如下：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span><br><span class="hljs-keyword">import</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react-dom&#x27;</span><br><span class="hljs-comment">/*接收数据*/</span><br><span class="hljs-keyword">const</span> Hello= <span class="hljs-function">(<span class="hljs-params">props</span>)=&gt;</span>&#123;<br>    <span class="hljs-comment">//props是一个对象</span><br>    <span class="hljs-keyword">return</span> (<br>        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span> props: &#123;props.name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>    )<br>&#125;<br><span class="hljs-comment">//传递数据</span><br>ReactDOM.render(<br>    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Hello</span>  <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;kiku&quot;</span>/&gt;</span></span>,<br>    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;root&#x27;</span>))<br></code></pre></td></tr></table></figure></li>
+<li>类组件proos 接收参数 this.props.参数名   代码示例如下<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span><br><span class="hljs-keyword">import</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react-dom&#x27;</span><br><span class="hljs-comment">/*接收数据*/</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Hello</span>  <span class="hljs-keyword">extends</span>  <span class="hljs-title">React</span>.<span class="hljs-title">Component</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params"></span>)</span> &#123;<br>        <span class="hljs-keyword">return</span>(<br>            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>props:&#123;this.props.name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>        )<br>    &#125;<br>&#125;<br><span class="hljs-comment">//传递数据</span><br>ReactDOM.render(<br>    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Hello</span>  <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;kiku&quot;</span>/&gt;</span></span>,<br>    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;root&#x27;</span>))<br></code></pre></td></tr></table></figure>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3></li>
+<li>可以给组件传递任意类型的数据</li>
+<li> <strong>props 是只读的对象</strong>，只能读取属性的值无法修改对象</li>
+<li>注意：使用类组件时，如果写了构造函数，应该将props 传递给 super() 否则无法在构造函数中，获取props!!!!<h2 id="组件通讯的三种方式"><a href="#组件通讯的三种方式" class="headerlink" title="组件通讯的三种方式"></a>组件通讯的三种方式</h2><h3 id="父组件传递个子组件"><a href="#父组件传递个子组件" class="headerlink" title="父组件传递个子组件"></a>父组件传递个子组件</h3></li>
+</ul>
 
       </section>
 
@@ -149,32 +156,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://linmuhan.gitee.io/links/Asset/menu07.jpg"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2022/02/08/%E7%94%A8ps%E6%8A%8A%E5%9B%BE%E7%89%87%E6%94%B9%E6%88%90%E7%AE%80%E7%AC%94%E7%94%BB/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">用ps把图片改成简笔画</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://linmuhan.gitee.io/links/Asset/menu07.jpg"></div>
-    
     <div class="card-text">
       
-        <a href="/2022/01/11/%E8%8E%B7%E5%8F%96url%E7%9A%84%E5%80%BC/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">获取url的值</h2>
+        <a href="/2022/09/04/React-%E8%A1%A8%E5%8D%95%E5%A4%84%E7%90%86/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">react 基础学习（二）之表单处理</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -253,6 +242,18 @@
 </section>
 
       
+<section class="widget-toc widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-toc" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M134.50666666 767.46666668H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.23999999v50.13333333c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H134.50666666c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.13333333c0.10666668-27.73333333 22.50666668-50.24000001 50.24000001-50.24000001zM84.37333332 541.65333333h326.18666669c27.73333333 0 50.24000001 22.39999999 50.23999999 50.13333334v50.24000001c0 27.73333333-22.50666668 50.24000001-50.24000002 50.23999999H84.37333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.23999999v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333334zM134.50666666 315.83999999H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.24000001v50.24000001c0 27.73333333-22.50666668 50.13333334-50.24000001 50.13333333H134.50666666c-27.73333333 0-50.24000001-22.39999999-50.23999999-50.13333333v-50.24000001c0.10666668-27.84000001 22.50666668-50.24000001 50.24000001-50.23999999zM209.81333332 89.91999999h326.18666671c27.73333333 0 50.24000001 22.39999999 50.23999997 50.13333335v50.23999999c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H209.81333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333333zM692.05333333 623.36l274.66666669 176.00000002c23.36000001 14.93333333 30.08 45.97333334 15.14666666 69.33333332L954.77333334 910.93333333c-14.93333333 23.25333334-45.97333334 30.08-69.33333335 15.14666667l-274.66666666-176c-23.36000001-14.93333333-30.08-45.97333334-15.14666667-69.33333333l27.09333334-42.24000001c14.93333333-23.36000001 46.08000001-30.08 69.33333333-15.14666666z" fill="currentColor"></path>
+</svg>
+    <span>TOC</span>
+  </div>
+  <div class="widget-body">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E7%9A%84props"><span class="toc-number">2.</span> <span class="toc-text">组件的props</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">2.1.</span> <span class="toc-text">特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">组件通讯的三种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E4%B8%AA%E5%AD%90%E7%BB%84%E4%BB%B6"><span class="toc-number">3.1.</span> <span class="toc-text">父组件传递个子组件</span></a></li></ol></li></ol>
+  </div>
+</section>
+
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
