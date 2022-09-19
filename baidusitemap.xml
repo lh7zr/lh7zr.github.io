@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://linmuhan.gitee.io/2022/09/19/React(%E5%9B%9B)%20%E7%BB%84%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <lastmod>2022-09-19</lastmod>
+  </url>
+  <url>
     <loc>http://linmuhan.gitee.io/2022/09/04/React-%E7%BB%84%E4%BB%B6%E8%BF%9B%E9%98%B6/</loc>
-    <lastmod>2022-09-04</lastmod>
+    <lastmod>2022-09-19</lastmod>
+  </url>
+  <url>
+    <loc>http://linmuhan.gitee.io/about/index.html</loc>
+    <lastmod>2022-09-06</lastmod>
   </url>
   <url>
     <loc>http://linmuhan.gitee.io/2022/09/04/React-%E8%A1%A8%E5%8D%95%E5%A4%84%E7%90%86/</loc>
@@ -46,10 +54,6 @@
   </url>
   <url>
     <loc>http://linmuhan.gitee.io/2022/07/12/HTML-CSS-%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
-    <lastmod>2022-07-16</lastmod>
-  </url>
-  <url>
-    <loc>http://linmuhan.gitee.io/about/index.html</loc>
     <lastmod>2022-07-16</lastmod>
   </url>
   <url>
