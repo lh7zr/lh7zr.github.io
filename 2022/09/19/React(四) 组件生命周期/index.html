@@ -154,7 +154,9 @@
 <li>执行顺序：<pre><code>  render() -&gt;   componentDidUpdate()
 </code></pre>
 </li>
-<li><img src="https://linmuhan.gitee.io/images/reactupdate.png" alt="创建时候生命周期"></li>
+<li><img src="https://linmuhan.gitee.io/images/reactupdate.png" alt="更新时生命周期"><h3 id="卸载时（卸载阶段-）"><a href="#卸载时（卸载阶段-）" class="headerlink" title="卸载时（卸载阶段 ）"></a>卸载时（卸载阶段 ）</h3></li>
+<li>执行时，组件从页面中消失</li>
+<li><img src="https://linmuhan.gitee.io/images/reactXZ.png" alt="卸载时生命周期"></li>
 </ul>
 
       </section>
@@ -162,6 +164,20 @@
       
       
         <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2023/07/04/VUE%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">VUE面试题</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
           
           
             <div class="article-nav-item layout-padding">
@@ -257,7 +273,7 @@
     <span>TOC</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">组件的生命周期概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="toc-number">2.</span> <span class="toc-text">生命周期的三个阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%97%B6%EF%BC%88%E6%8C%82%E8%BD%BD%E9%98%B6%E6%AE%B5-%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">创建时（挂载阶段 ）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%97%B6%EF%BC%88%E6%9B%B4%E6%96%B0%E9%98%B6%E6%AE%B5%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">更新时（更新阶段）</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">组件的生命周期概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="toc-number">2.</span> <span class="toc-text">生命周期的三个阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%97%B6%EF%BC%88%E6%8C%82%E8%BD%BD%E9%98%B6%E6%AE%B5-%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">创建时（挂载阶段 ）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%97%B6%EF%BC%88%E6%9B%B4%E6%96%B0%E9%98%B6%E6%AE%B5%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">更新时（更新阶段）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%B8%E8%BD%BD%E6%97%B6%EF%BC%88%E5%8D%B8%E8%BD%BD%E9%98%B6%E6%AE%B5-%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">卸载时（卸载阶段 ）</span></a></li></ol></li></ol>
   </div>
 </section>
 
@@ -317,12 +333,6 @@
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/PS/photoshop/">
-            photoshop (2)
-          </a>
-        </li>
-      
-        <li class="categorys-list-item">
           <a href="/categories/CSS/">
             CSS (1)
           </a>
@@ -331,6 +341,12 @@
         <li class="categorys-list-item">
           <a href="/categories/JS/">
             JS (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/PS/photoshop/">
+            photoshop (2)
           </a>
         </li>
       
@@ -347,14 +363,14 @@
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/CSS/H5/">
-            H5 (1)
+          <a href="/categories/js/">
+            js (1)
           </a>
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/js/">
-            js (1)
+          <a href="/categories/CSS/H5/">
+            H5 (1)
           </a>
         </li>
       
@@ -417,7 +433,7 @@
       
     </div>
     
-    <p>&copy; 2022 <a href="/" target="_blank">霖霏晗</a></p>
+    <p>&copy; 2023 <a href="/" target="_blank">霖霏晗</a></p>
 
     
 
